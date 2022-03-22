@@ -1,0 +1,55 @@
+.card {
+  color: black;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  position: relative;
+  max-width: 300px;
+  padding-bottom: 5px;
+  border-radius: 0px 20px 0px 20px;
+  transition: box-shadow 300ms ease-in-out;
+}
+.card .add-to-checkout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  height: 40px;
+  width: 150px;
+  background-color: #77c8aa;
+  cursor: pointer;
+  border: none;
+  color: white;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  transition: transform 200ms ease-in-out;
+  margin-bottom: 10px;
+}
+.card .add-to-checkout-button:hover {
+  transform: scale(1.1);
+}
+.card p:first-of-type {
+  font-size: 1.3rem;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.card .main-product-img {
+  width: 13rem;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: 15px;
+  cursor: pointer;
+  position: relative;
+}
+.card .price-tag {
+  color: #6c7a89;
+  margin-top: 10px;
+  font-size: 1.3rem;
+  margin: 5px;
+}
+
+.card:hover {
+  box-shadow: 5px 5px 5px 5px rgba(108, 122, 137, 0.4);
+}/*# sourceMappingURL=ProductCard.css.map */

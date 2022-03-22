@@ -1,0 +1,64 @@
+@import '../../styles/Variables.scss';
+
+form {
+  box-shadow: 10px 10px 25px rgba(108, 122, 137, 0.5);
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  margin: 20px;
+
+  h2 {
+    color: $primary-color;
+  }
+
+  input {
+    margin: 10px;
+    width: 50%;
+    height: 30px;
+    font-size: 15px;
+    border: none;
+    border-bottom: 1px solid $light-color;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  input:focus {
+    border-bottom: 2px solid $primary-color;
+  }
+
+  input::placeholder {
+    color: $dark-color;
+  }
+
+  select {
+    margin: 10px;
+    width: 120px;
+    height: 30px;
+    border: 1px solid $light-color;
+    outline: none;
+    font-size: 15px;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  button {
+    width: 50%;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+    background-color: $primary-color;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: background-color 200ms ease-in;
+    margin: 10px;
+  }
+
+  button:hover {
+    background-color: $secondary-color;
+  }
+}

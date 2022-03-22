@@ -1,0 +1,69 @@
+.checkout-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.checkout-page .checkout-main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 70%;
+}
+.checkout-page .stepper {
+  grid-area: stepper;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+}
+.checkout-page .stepper .step {
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #77c8aa;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bolder;
+  cursor: default;
+  word-wrap: break-word;
+}
+.checkout-page .stepper .selected-step {
+  width: 65px;
+  height: 65px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #77c8aa;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bolder;
+  cursor: default;
+  word-wrap: break-word;
+  -webkit-text-decoration: underline white;
+          text-decoration: underline white;
+}
+.checkout-page .stepper .step-divider {
+  width: 10%;
+  border-top: 5px dotted #6c7a89;
+}
+.checkout-page button {
+  height: 30px;
+  font-size: 1.2rem;
+  color: #403f4c;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 2px solid #77c8aa;
+  cursor: pointer;
+}/*# sourceMappingURL=Checkout.css.map */

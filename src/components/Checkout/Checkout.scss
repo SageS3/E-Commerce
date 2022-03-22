@@ -1,0 +1,75 @@
+@import '../../styles/Variables.scss';
+
+.checkout-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  .checkout-main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 70%;
+  }
+
+  .stepper {
+    grid-area: stepper;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+
+    .step {
+      width: 60px;
+      height: 60px;
+      margin: 10px;
+      padding: 10px;
+      background-color: $secondary-color;
+      border-radius: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bolder;
+      cursor: default;
+      word-wrap: break-word;
+    }
+
+    .selected-step {
+      width: 65px;
+      height: 65px;
+      margin: 10px;
+      padding: 10px;
+      background-color: $secondary-color;
+      border-radius: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bolder;
+      cursor: default;
+      word-wrap: break-word;
+      text-decoration: underline white;
+    }
+
+    .step-divider {
+      width: 10%;
+      border-top: 5px dotted $light-color;
+    }
+  }
+  button {
+    height: 30px;
+    font-size: 1.2rem;
+    color: $primary-color;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-bottom: 2px solid $secondary-color;
+    cursor: pointer;
+  }
+}

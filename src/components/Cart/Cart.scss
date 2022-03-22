@@ -1,0 +1,148 @@
+@import '../../styles/Variables.scss';
+
+.cart-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .cart-item-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 90%;
+    width: 40%;
+  }
+
+  .cart-username {
+    color: rgb(64, 63, 76);
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 10px;
+  }
+
+  .cart-item-list > section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(119, 200, 170);
+    margin: 0;
+    cursor: default;
+    font-style: italic;
+    width: 550px;
+    font-size: 1.9rem;
+    font-weight: bolder;
+    height: auto;
+  }
+
+  .confirm-checkout-wrapper {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    background: white;
+    // box-shadow: 10px 10px 25px rgba(108, 122, 137, 0.5);
+    padding: 20px;
+    width: 93%;
+    margin: 10px;
+
+    section {
+      display: flex;
+      align-items: center;
+      margin: 0;
+
+      .total-price {
+        color: rgb(64, 63, 76);
+        font-size: 1.7rem;
+        cursor: default;
+        font-weight: 600;
+      }
+
+      .price {
+        color: rgb(108, 122, 137);
+        font-size: 1.4rem;
+        cursor: default;
+      }
+    }
+
+    .checkout-button {
+      width: 200px;
+      height: 50px;
+      color: white;
+      font-size: 1.3rem;
+      background-color: $primary-color;
+      border-radius: 12px;
+      margin: 5px;
+      cursor: pointer;
+      border: none;
+      transition: background-color 200ms ease-in-out;
+    }
+
+    .checkout-button:hover {
+      background-color: $secondary-color;
+    }
+
+    .empty-cart-button {
+      font-size: 1.3rem;
+      width: 200px;
+      height: 50px;
+      border-radius: 12px;
+      border: 1px solid rgb(64, 63, 76);
+      background-color: white;
+      color: rgb(64, 63, 76);
+      cursor: pointer;
+    }
+  }
+
+  .cart-item-list > section > p:last-of-type {
+    font-size: 1.3rem;
+    color: rgb(108, 122, 137);
+    font-style: normal;
+  }
+
+  h1 {
+    color: rgb(119, 200, 170);
+  }
+}
+
+// cart loading page animation
+
+.cart-page-loading {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50px, -50px);
+  justify-content: center;
+
+  .loading_dot {
+    width: 30px;
+    height: 30px;
+    background-color: $primary-color;
+    border-radius: 100px;
+    margin: 5px;
+  }
+
+  .dot_one {
+    animation: wave 400ms ease-in-out 200ms infinite alternate;
+  }
+
+  .dot_two {
+    animation: wave 400ms ease-in-out 400ms infinite alternate;
+  }
+
+  .dot_three {
+    animation: wave 400ms ease-in-out 600ms infinite alternate;
+  }
+
+  @keyframes wave {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(5px);
+      background-color: rgb(119, 200, 170);
+    }
+  }
+}

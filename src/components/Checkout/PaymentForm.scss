@@ -1,0 +1,34 @@
+@import '../../styles/Variables.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  top: 0px;
+  padding: 5px;
+  background-color: $light-color;
+
+  .wrapper > form {
+    // background-color: white;
+    width: auto;
+    height: 30px;
+  }
+
+  input {
+    margin: 10px;
+    width: 50%;
+    height: 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-bottom: 1px solid $dark-color;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .StripeElement {
+    width: 100%;
+  }
+}

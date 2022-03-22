@@ -1,0 +1,61 @@
+form {
+  box-shadow: 10px 10px 25px rgba(108, 122, 137, 0.5);
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  margin: 20px;
+}
+form h2 {
+  color: #403f4c;
+}
+form input {
+  margin: 10px;
+  width: 50%;
+  height: 30px;
+  font-size: 15px;
+  border: none;
+  border-bottom: 1px solid #6c7a89;
+  outline: none;
+  box-sizing: border-box;
+}
+form input:focus {
+  border-bottom: 2px solid #403f4c;
+}
+form input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+form input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+form input::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+form select {
+  margin: 10px;
+  width: 120px;
+  height: 30px;
+  border: 1px solid #6c7a89;
+  outline: none;
+  font-size: 15px;
+  padding: 5px;
+  cursor: pointer;
+}
+form button {
+  width: 50%;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+  background-color: #403f4c;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  transition: background-color 200ms ease-in;
+  margin: 10px;
+}
+form button:hover {
+  background-color: #77c8aa;
+}/*# sourceMappingURL=AddressFrom.css.map */
