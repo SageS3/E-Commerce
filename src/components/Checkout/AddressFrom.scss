@@ -2,12 +2,12 @@
 
 form {
   box-shadow: 10px 10px 25px rgba(108, 122, 137, 0.5);
-  width: 50%;
+  width: 25rem;
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding: 20px;
   margin: 20px;
 
@@ -17,13 +17,14 @@ form {
 
   input {
     margin: 10px;
-    width: 50%;
+    width: 70%;
     height: 30px;
     font-size: 15px;
     border: none;
-    border-bottom: 1px solid $light-color;
+    border-bottom: 2px solid $light-color;
     outline: none;
     box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0);
   }
 
   input:focus {
@@ -60,5 +61,15 @@ form {
 
   button:hover {
     background-color: $secondary-color;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  form {
+    width: 100%;
+  }
+
+  input {
+    width: 90%;
   }
 }
