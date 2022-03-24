@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 .navbar .navbar-wrapper {
   display: flex;
@@ -55,4 +56,14 @@
 .navbar a:last-of-type button:hover {
   transform: scale(1.1);
   box-shadow: 9px 9px 8px rgba(108, 122, 137, 0.6);
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    background-color: #77c8aa;
+  }
+
+  .navbar-wrapper button {
+    display: none;
+  }
 }/*# sourceMappingURL=Navbar.css.map */

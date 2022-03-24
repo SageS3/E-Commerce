@@ -6,7 +6,7 @@
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 0.3fr 4fr 0.3fr;
   grid-template-areas:
-    ' . nav .'
+    ' nav nav nav'
     '  . main .  '
     'footer footer footer';
 }
@@ -84,5 +84,18 @@
       transform: translateY(5px);
       background-color: rgb(119, 200, 170);
     }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home-page {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 0.3fr 4fr 0.3fr;
+    grid-template-areas:
+      ' nav nav nav'
+      '  main main main  '
+      'footer footer footer';
   }
 }

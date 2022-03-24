@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 0.3fr 4fr 0.3fr;
-  grid-template-areas: " . nav ." "  . main .  " "footer footer footer";
+  grid-template-areas: " nav nav nav" "  . main .  " "footer footer footer";
 }
 
 .loading-page {
@@ -86,5 +86,15 @@
   100% {
     transform: translateY(5px);
     background-color: #77c8aa;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home-page {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 0.3fr 4fr 0.3fr;
+    grid-template-areas: " nav nav nav" "  main main main  " "footer footer footer";
   }
 }/*# sourceMappingURL=Main.css.map */
