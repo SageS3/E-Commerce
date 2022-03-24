@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './AddressFrom.css';
+import './AddressForm.css';
 
 export default function AddressForm({ activeStep, setStep }) {
   const [firstName, setFirstName] = useState('');

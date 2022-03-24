@@ -18,7 +18,7 @@
   width: 70%;
   margin: 10px;
   background-color: white;
-  border-radius: 0px 20px 0px 20px;
+  border-radius: 20px;
 }
 .cart-list-container .item-card .delete-item-button {
   display: flex;

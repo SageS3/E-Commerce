@@ -7,7 +7,7 @@
   position: relative;
   max-width: 300px;
   padding-bottom: 5px;
-  border-radius: 0px 20px 0px 20px;
+  border-radius: 20px;
   transition: box-shadow 300ms ease-in-out;
 }
 .card .add-to-checkout-button {
