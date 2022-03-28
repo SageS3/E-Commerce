@@ -71,12 +71,14 @@ function Cart({
       <div className="cart-item-list">
         {cartItems.length === 0 && emptyCartMessage()}
         {cartItems.length > 0 && populatedCart()}
-        <CartCard
-          cart={cart}
-          updateCart={updateCart}
-          removeFromCart={removeFromCart}
-          products={products}
-        ></CartCard>
+        {cartItems.length > 0 && (
+          <CartCard
+            cart={cart}
+            updateCart={updateCart}
+            removeFromCart={removeFromCart}
+            products={products}
+          ></CartCard>
+        )}
         {cartItems.length > 0 && confirmCheckout()}
       </div>
     </div>

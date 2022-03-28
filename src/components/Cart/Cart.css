@@ -36,7 +36,7 @@
   display: flex;
   flex-direction: column;
   place-items: center;
-  background: white;
+  background: #403f4c;
   padding: 20px;
   width: 93%;
   margin: 10px;
@@ -47,14 +47,14 @@
   margin: 0;
 }
 .cart-page .confirm-checkout-wrapper section .total-price {
-  color: #403f4c;
+  color: white;
   font-size: 1.7rem;
   cursor: default;
   font-weight: 600;
 }
 .cart-page .confirm-checkout-wrapper section .price {
-  color: #6c7a89;
-  font-size: 1.4rem;
+  color: white;
+  font-size: 1.7rem;
   cursor: default;
 }
 .cart-page .confirm-checkout-wrapper .checkout-button {
@@ -62,7 +62,7 @@
   height: 50px;
   color: white;
   font-size: 1.3rem;
-  background-color: #403f4c;
+  background-color: #77c8aa;
   border-radius: 12px;
   margin: 5px;
   cursor: pointer;

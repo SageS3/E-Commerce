@@ -41,7 +41,7 @@
     display: flex;
     flex-direction: column;
     place-items: center;
-    background: white;
+    background: $primary-color;
     // box-shadow: 10px 10px 25px rgba(108, 122, 137, 0.5);
     padding: 20px;
     width: 93%;
@@ -53,15 +53,15 @@
       margin: 0;
 
       .total-price {
-        color: rgb(64, 63, 76);
+        color: white;
         font-size: 1.7rem;
         cursor: default;
         font-weight: 600;
       }
 
       .price {
-        color: rgb(108, 122, 137);
-        font-size: 1.4rem;
+        color: white;
+        font-size: 1.7rem;
         cursor: default;
       }
     }
@@ -71,7 +71,7 @@
       height: 50px;
       color: white;
       font-size: 1.3rem;
-      background-color: $primary-color;
+      background-color: $secondary-color;
       border-radius: 12px;
       margin: 5px;
       cursor: pointer;

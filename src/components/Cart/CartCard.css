@@ -7,6 +7,7 @@
   overflow-x: hidden;
   width: 100%;
   height: 60%;
+  background-color: #403f4c;
 }
 .cart-list-container .item-card {
   display: flex;
@@ -18,7 +19,6 @@
   width: 70%;
   margin: 10px;
   background-color: white;
-  border-radius: 20px;
 }
 .cart-list-container .item-card .delete-item-button {
   display: flex;
