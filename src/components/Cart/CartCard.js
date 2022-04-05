@@ -24,14 +24,6 @@ export default function CartCard({
 
   addDescription();
 
-  // card slide animation...
-  // The slide animation will slide horizontally starting
-  // with the card overflow hidden within the .cart-list-container.
-  // Every other item will slide in from the opposite side.
-  // the animation
-
-  const cardWrapper = document.querySelector('item-card');
-
   return (
     <div className="cart-list-container">
       {cartItems.map((item) => (

@@ -33,10 +33,7 @@
   position: absolute;
   left: -50px;
   top: 20px;
-  background-color: rgba(0, 0, 0, 0);
-}
-.cart-list-container .item-card .delete-item-button:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 .cart-list-container .item-card .img-wrapper {
   width: auto;

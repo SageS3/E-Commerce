@@ -40,7 +40,6 @@
   -o-object-fit: cover;
      object-fit: cover;
   margin-top: 15px;
-  cursor: pointer;
   position: relative;
 }
 .card .price-tag {
@@ -48,8 +47,4 @@
   margin-top: 10px;
   font-size: 1.3rem;
   margin: 5px;
-}
-
-.card:hover {
-  box-shadow: 5px 5px 5px 5px rgba(108, 122, 137, 0.4);
 }/*# sourceMappingURL=ProductCard.css.map */
