@@ -46,7 +46,7 @@ function PaymentForm(activeStep, setActiveStep) {
 
   return (
     <div className="wrapper">
-      <input
+      {/* <input
         type="text"
         value={cardHolderName}
         placeholder="Name on Card"
@@ -75,7 +75,7 @@ function PaymentForm(activeStep, setActiveStep) {
         value={cardHolderZip}
         placeholder="Zip"
         onChange={(e) => setCardHolderZip(e.target.value)}
-      ></input>
+      ></input> */}
       <Elements stripe={stripePromise}>
         <ElementsConsumer>
           {({ stripe }) => (
