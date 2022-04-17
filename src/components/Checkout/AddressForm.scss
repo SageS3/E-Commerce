@@ -1,15 +1,14 @@
 @import '../../styles/Variables.scss';
 
-form {
+.addressForm {
   box-shadow: 10px 10px 25px rgba(108, 122, 137, 0.5);
-  width: 25rem;
-  height: auto;
+  width: 70%;
   display: flex;
   flex-direction: column;
+  height: 500px;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  margin: 20px;
 
   h2 {
     color: $primary-color;
@@ -17,7 +16,8 @@ form {
 
   input {
     margin: 10px;
-    width: 70%;
+    width: 100%;
+    max-width: 50%;
     height: 30px;
     font-size: 15px;
     border: none;
@@ -46,21 +46,20 @@ form {
     cursor: pointer;
   }
 
-  button {
-    width: 50%;
-    height: 35px;
-    border: none;
-    cursor: pointer;
-    background-color: $primary-color;
-    color: white;
-    font-size: 1.3rem;
-    font-weight: bold;
-    transition: background-color 200ms ease-in;
+  .submitAddressFormButton {
     margin: 10px;
+    width: 100%;
+    max-width: 50%;
+    background-color: $secondary-color;
+    border: none;
+    padding: 5px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: font-size 200ms ease-in;
   }
 
-  button:hover {
-    background-color: $secondary-color;
+  .submitAddressFormButton:hover {
+    font-size: 1.5rem;
   }
 }
 

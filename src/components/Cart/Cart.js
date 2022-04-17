@@ -58,6 +58,7 @@ function Cart({
   };
 
   const emptyCartMessage = () => <h1>Add Items To Your Cart!</h1>;
+
   const populatedCart = () => (
     <section>
       <p>User's cart</p>

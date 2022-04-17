@@ -7,33 +7,41 @@
   overflow-x: hidden;
   width: 100%;
   height: 60%;
-  background-color: #403f4c;
+  border-bottom: 5px solid rgb(119, 200, 170);
+  background-color: rgb(64, 63, 76);
 }
 .cart-list-container .item-card {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
-  position: relative;
   height: 150px;
   width: 70%;
   margin: 10px;
   background-color: white;
+  position: relative;
+}
+@media screen and (max-width: 600px) {
+  .cart-list-container .item-card .item-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 .cart-list-container .item-card .delete-item-button {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 100px;
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
   border: none;
   cursor: pointer;
-  color: #403f4c;
+  color: white;
   position: absolute;
   left: -50px;
   top: 20px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgb(64, 63, 76);
 }
 .cart-list-container .item-card .img-wrapper {
   width: auto;
@@ -59,14 +67,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
-}
-.cart-list-container .item-card .item-details-wrapper section:first-of-type h3 {
-  color: rgba(0, 0, 0, 0.6);
 }
 .cart-list-container .item-card .item-details-wrapper section:first-of-type p {
   font-weight: bold;
-  color: #403f4c;
+  color: rgb(64, 63, 76);
   padding: 5px;
 }
 .cart-list-container .item-card section:last-of-type {
@@ -98,7 +102,7 @@
   justify-content: center;
   border-radius: 100px;
   background-color: white;
-  border: 1px solid #77c8aa;
+  border: 1px solid rgb(119, 200, 170);
   padding: 2px;
   margin: 0 20px 0 20px;
   cursor: pointer;
@@ -109,7 +113,7 @@
   justify-content: center;
   border-radius: 100px;
   border: none;
-  background-color: #77c8aa;
+  background-color: rgb(119, 200, 170);
   padding: 2px;
   margin: 0 20px 0 20px;
   cursor: pointer;

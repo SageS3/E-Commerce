@@ -6,16 +6,13 @@
   justify-content: flex-start;
 }
 .checkout-page .checkout-main {
-  grid-area: main;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
-  width: 70%;
+  width: 50%;
+  max-width: 50%;
 }
 .checkout-page .stepper {
-  grid-area: stepper;
   margin: 5px;
   display: flex;
   align-items: center;
@@ -27,7 +24,7 @@
   height: 60px;
   margin: 10px;
   padding: 10px;
-  background-color: #77c8aa;
+  background-color: rgb(119, 200, 170);
   border-radius: 100px;
   display: flex;
   justify-content: center;
@@ -42,7 +39,7 @@
   height: 65px;
   margin: 10px;
   padding: 10px;
-  background-color: #77c8aa;
+  background-color: rgb(119, 200, 170);
   border-radius: 100px;
   display: flex;
   justify-content: center;
@@ -56,14 +53,14 @@
 }
 .checkout-page .stepper .step-divider {
   width: 10%;
-  border-top: 5px dotted #6c7a89;
+  border-top: 5px dotted rgb(108, 122, 137);
 }
-.checkout-page button {
+.checkout-page .checkoutFormBackButton {
   height: 30px;
   font-size: 1.2rem;
-  color: #403f4c;
+  color: rgb(64, 63, 76);
   background-color: rgba(0, 0, 0, 0);
   border: none;
-  border-bottom: 2px solid #77c8aa;
+  border-bottom: 2px solid rgb(119, 200, 170);
   cursor: pointer;
 }/*# sourceMappingURL=Checkout.css.map */

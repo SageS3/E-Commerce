@@ -5,19 +5,21 @@
   flex-direction: column;
   place-items: center;
   position: relative;
-  width: 16rem;
+  max-width: 15rem;
+  width: 15rem;
   padding-bottom: 5px;
-  border-radius: 20px;
+  border-radius: 15px;
   transition: box-shadow 300ms ease-in-out;
+  margin: 5px;
 }
 .card .add-to-checkout-button {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
-  height: 40px;
-  width: 150px;
-  background-color: #77c8aa;
+  height: auto;
+  width: 70%;
+  background-color: rgb(119, 200, 170);
   cursor: pointer;
   border: none;
   color: white;
@@ -25,25 +27,27 @@
   font-size: 1.2rem;
   transition: transform 200ms ease-in-out;
   margin-bottom: 10px;
+  padding: 5px;
 }
 .card .add-to-checkout-button:hover {
   transform: scale(1.1);
 }
 .card p:first-of-type {
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin-top: 5px;
   margin-bottom: 0;
+  word-wrap: break-word;
 }
 .card .main-product-img {
-  width: 13rem;
-  height: 200px;
+  min-width: 10rem;
+  width: 15rem;
+  height: 15rem;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-top: 15px;
-  position: relative;
+  border-radius: 15px 15px 0 0;
 }
 .card .price-tag {
-  color: #6c7a89;
+  color: rgb(108, 122, 137);
   margin-top: 10px;
   font-size: 1.3rem;
   margin: 5px;

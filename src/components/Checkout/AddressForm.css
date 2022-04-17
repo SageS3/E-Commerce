@@ -1,64 +1,63 @@
-form {
+.addressForm {
   box-shadow: 10px 10px 25px rgba(108, 122, 137, 0.5);
-  width: 25rem;
-  height: auto;
+  width: 70%;
   display: flex;
   flex-direction: column;
+  height: 500px;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  margin: 20px;
 }
-form h2 {
-  color: #403f4c;
+.addressForm h2 {
+  color: rgb(64, 63, 76);
 }
-form input {
+.addressForm input {
   margin: 10px;
-  width: 70%;
+  width: 100%;
+  max-width: 50%;
   height: 30px;
   font-size: 15px;
   border: none;
-  border-bottom: 2px solid #6c7a89;
+  border-bottom: 2px solid rgb(108, 122, 137);
   outline: none;
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0);
 }
-form input:focus {
-  border-bottom: 2px solid #403f4c;
+.addressForm input:focus {
+  border-bottom: 2px solid rgb(64, 63, 76);
 }
-form input::-moz-placeholder {
+.addressForm input::-moz-placeholder {
   color: rgba(0, 0, 0, 0.7);
 }
-form input:-ms-input-placeholder {
+.addressForm input:-ms-input-placeholder {
   color: rgba(0, 0, 0, 0.7);
 }
-form input::placeholder {
+.addressForm input::placeholder {
   color: rgba(0, 0, 0, 0.7);
 }
-form select {
+.addressForm select {
   margin: 10px;
   width: 120px;
   height: 30px;
-  border: 1px solid #6c7a89;
+  border: 1px solid rgb(108, 122, 137);
   outline: none;
   font-size: 15px;
   padding: 5px;
   cursor: pointer;
 }
-form button {
-  width: 50%;
-  height: 35px;
-  border: none;
-  cursor: pointer;
-  background-color: #403f4c;
-  color: white;
-  font-size: 1.3rem;
-  font-weight: bold;
-  transition: background-color 200ms ease-in;
+.addressForm .submitAddressFormButton {
   margin: 10px;
+  width: 100%;
+  max-width: 50%;
+  background-color: rgb(119, 200, 170);
+  border: none;
+  padding: 5px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: font-size 200ms ease-in;
 }
-form button:hover {
-  background-color: #77c8aa;
+.addressForm .submitAddressFormButton:hover {
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 600px) {

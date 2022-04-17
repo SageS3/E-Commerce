@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import './AddressForm.css';
 
-export default function AddressForm({ activeStep, setStep }) {
+export default function AddressForm({
+  nextStep,
+  setShippingData,
+  shippingData,
+}) {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -12,37 +16,40 @@ export default function AddressForm({ activeStep, setStep }) {
   const [city, setCity] = useState('');
   const [zip, setZip] = useState('');
 
-  const countries = [
-    'Norway',
-    'Sweden',
-    'United States',
-    'France',
-    'Japan',
-  ].sort();
+  const countries = ['United States'].sort();
+  const states = ['CA'].sort();
 
   const selectCountry = () => {
     return countries.map((country) => <option key={country}>{country}</option>);
   };
 
+  const selectState = () => {
+    return states.map((state) => <option key={state}>{state}</option>);
+  };
+
+  const addressFormData = {
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    address: address,
+    country: country,
+    city: city,
+    state: state,
+    zip: zip,
+  };
   const submitAddressDetails = (event) => {
-    const details = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      address: address,
-      country: country,
-      city: city,
-      state: state,
-      zip: zip,
-    };
-    setStep(activeStep + 1);
+    setShippingData(addressFormData);
+
+    nextStep();
     event.preventDefault();
-    console.log(details);
   };
 
   return (
     <>
-      <form onSubmit={(event) => submitAddressDetails(event)}>
+      <form
+        onSubmit={(event) => submitAddressDetails(event)}
+        className="addressForm"
+      >
         <h2>Shipping Details</h2>
         <input
           name={firstName}
@@ -83,13 +90,9 @@ export default function AddressForm({ activeStep, setStep }) {
         <select value={country} onChange={(e) => setCountry(e.target.value)}>
           {selectCountry()}
         </select>
-        <input
-          required
-          type="text"
-          placeholder="State *"
-          value={state}
-          onChange={(e) => setState(e.target.value)}
-        ></input>
+        <select value={country} onChange={(e) => setState(e.target.value)}>
+          {selectState()}
+        </select>
         <input
           type="text"
           required
@@ -104,7 +107,9 @@ export default function AddressForm({ activeStep, setStep }) {
           value={zip}
           onChange={(e) => setZip(e.target.value)}
         ></input>
-        <button type="submit">Submit</button>
+        <button className="submitAddressFormButton" type="submit">
+          Submit
+        </button>
       </form>
     </>
   );

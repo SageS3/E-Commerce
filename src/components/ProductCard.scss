@@ -7,18 +7,20 @@
   flex-direction: column;
   place-items: center;
   position: relative;
-  width: 16rem;
+  max-width: 15rem;
+  width: 15rem;
   padding-bottom: 5px;
-  border-radius: 20px;
+  border-radius: 15px;
   transition: box-shadow 300ms ease-in-out;
+  margin: 5px;
 
   .add-to-checkout-button {
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 5px;
-    height: 40px;
-    width: 150px;
+    height: auto;
+    width: 70%;
     background-color: $secondary-color;
     cursor: pointer;
     border: none;
@@ -27,6 +29,7 @@
     font-size: 1.2rem;
     transition: transform 200ms ease-in-out;
     margin-bottom: 10px;
+    padding: 5px;
   }
 
   .add-to-checkout-button:hover {
@@ -34,17 +37,18 @@
   }
 
   p:first-of-type {
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-top: 5px;
     margin-bottom: 0;
+    word-wrap: break-word;
   }
 
   .main-product-img {
-    width: 13rem;
-    height: 200px;
+    min-width: 10rem;
+    width: 15rem;
+    height: 15rem;
     object-fit: cover;
-    margin-top: 15px;
-    position: relative;
+    border-radius: 15px 15px 0 0;
   }
   .price-tag {
     color: $light-color;

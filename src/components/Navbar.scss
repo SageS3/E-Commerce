@@ -8,12 +8,14 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  z-index: 2;
 
   .navbar-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 100%;
+    background-color: rgb(230, 230, 230, 0.9);
 
     button {
       background-color: white;

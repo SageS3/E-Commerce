@@ -1,4 +1,3 @@
-import React from 'react';
 import './ProductCard.css';
 
 function ProductCard({ products, addToCart }) {
@@ -10,6 +9,7 @@ function ProductCard({ products, addToCart }) {
             className="main-product-img skeleton"
             src={product.image.url}
           ></img>
+
           <p>{product.name}</p>
           <p className="price-tag">{product.price.formatted_with_symbol}</p>
           <button

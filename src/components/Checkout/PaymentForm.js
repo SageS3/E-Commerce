@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './PaymentForm.css';
 import { loadStripe } from '@stripe/stripe-js';
 import {
@@ -11,28 +11,58 @@ const stripePromise = loadStripe(
   `${process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}`
 );
 
-function PaymentForm(activeStep, setActiveStep) {
-  const [cardHolderName, setCardHolderName] = useState('');
-  const [cardHolderAddress, setCardHolderAddress] = useState('');
-  const [cardHolderState, setCardHolderState] = useState('');
-  const [cardHolderCity, setCardHolderCity] = useState('');
-  const [cardHolderZip, setCardHolderZip] = useState('');
+function PaymentForm({
+  checkoutToken,
+  onCaptureCheckout,
+  shippingData,
+  nextStep,
+}) {
+  const handleSubmit = async (event, elements, stripe) => {
+    event.preventDefault();
+    if (!stripe || !elements) return;
+    const cardElement = elements.getElement(CardElement);
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
+      type: 'card',
+      card: cardElement,
+    });
 
-  // create a payment intent on the server
-  // returns a client_secret of that payment intent
-
-  // we need a reference to the card element we defined
-  // we need a reference to the stripe.js object
-  // create a payment method
-
-  // confirm the payment
-  // requires payment method id and client secret
+    if (error) {
+      console.log(error);
+    } else {
+      const orderData = {
+        line_items: checkoutToken.live.line_items,
+        customer: {
+          firstname: shippingData.firstName,
+          lastname: shippingData.lastName,
+          email: shippingData.email,
+        },
+        shipping: {
+          name: 'primary',
+          street: shippingData.address,
+          town_city: shippingData.city,
+          county_state: shippingData.state,
+          postal_zip_code: shippingData.zip,
+          country: shippingData.country,
+        },
+        fullfillment: { shipping_method: 'Domestic' },
+        payment: {
+          gateway: 'stripe',
+          stripe: {
+            payment_method_id: paymentMethod.id,
+          },
+        },
+      };
+      onCaptureCheckout(checkoutToken.id, orderData);
+      nextStep();
+    }
+  };
 
   const cardElementOptions = {
     style: {
       base: {
         backgroundColor: 'white',
         color: '#403F4C',
+        fontSize: '25px',
       },
       invalid: {
         color: '#E3655B',
@@ -45,50 +75,15 @@ function PaymentForm(activeStep, setActiveStep) {
   };
 
   return (
-    <div className="wrapper">
-      {/* <input
-        type="text"
-        value={cardHolderName}
-        placeholder="Name on Card"
-        onChange={(e) => setCardHolderName(e.target.value)}
-      ></input>
-      <input
-        type="text"
-        value={cardHolderAddress}
-        placeholder="Address"
-        onChange={(e) => setCardHolderAddress(e.target.value)}
-      ></input>
-      <input
-        type="text"
-        value={cardHolderCity}
-        placeholder="City"
-        onChange={(e) => setCardHolderCity(e.target.value)}
-      ></input>
-      <input
-        type="text"
-        value={cardHolderState}
-        placeholder="State"
-        onChange={(e) => setCardHolderState(e.target.value)}
-      ></input>
-      <input
-        type="text"
-        value={cardHolderZip}
-        placeholder="Zip"
-        onChange={(e) => setCardHolderZip(e.target.value)}
-      ></input> */}
+    <div className="paymentFormWrapper">
       <Elements stripe={stripePromise}>
         <ElementsConsumer>
-          {({ stripe }) => (
-            <form>
-              <CardElement options={cardElementOptions}>
-                <div>
-                  <button onClick={() => setActiveStep(activeStep - 1)}>
-                    Back
-                  </button>
-                  <button disabled={!stripe}>pay</button>
-                </div>
-              </CardElement>
-              <button type="submit">Pay</button>
+          {({ elements, stripe }) => (
+            <form onSubmit={(e) => handleSubmit(e, elements, stripe)}>
+              <CardElement options={cardElementOptions} />
+              <button type="submit" disabled={!stripe}>
+                Pay {checkoutToken.live.subtotal.formatted_with_symbol}
+              </button>
             </form>
           )}
         </ElementsConsumer>

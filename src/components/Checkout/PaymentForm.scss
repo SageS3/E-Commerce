@@ -1,31 +1,46 @@
 @import '../../styles/Variables.scss';
 
-.wrapper {
+.paymentFormWrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 70%;
   height: 100%;
   top: 0px;
-  padding: 5px;
-  background-color: $light-color;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0);
 
-  .wrapper > form {
-    width: auto;
-    height: 30px;
+  form {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
   }
 
-  input {
+  button {
     margin: 10px;
     width: 50%;
-    height: 30px;
-    font-size: 1.1rem;
+    background-color: $secondary-color;
     border: none;
-    border-bottom: 1px solid $dark-color;
-    outline: none;
-    box-sizing: border-box;
+    padding: 5px;
+    font-size: 1.3rem;
   }
+
+  // input {
+  //   margin: 10px;
+  //   width: 50%;
+  //   height: 30px;
+  //   font-size: 1.1rem;
+  //   border: none;
+  //   border-bottom: 1px solid $dark-color;
+  //   outline: none;
+  //   box-sizing: border-box;
+  // }
 
   .StripeElement {
     width: 100%;
