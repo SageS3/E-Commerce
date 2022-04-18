@@ -60,7 +60,7 @@ function Cart({
   const emptyCartMessage = () => <h1>Add Items To Your Cart!</h1>;
 
   const populatedCart = () => (
-    <section>
+    <section className="cart-header-display">
       <p>User's cart</p>
       <p>{`${cartItemsSum()} \u0020 ${isPlural(cartItemsSum)}`}</p>
     </section>
@@ -69,9 +69,10 @@ function Cart({
   return (
     <div className="cart-page">
       <Navbar setIsOpen={setIsOpen} />
+      {cartItems.length > 0 && populatedCart()}
       <div className="cart-item-list">
         {cartItems.length === 0 && emptyCartMessage()}
-        {cartItems.length > 0 && populatedCart()}
+
         {cartItems.length > 0 && (
           <CartCard
             cart={cart}
