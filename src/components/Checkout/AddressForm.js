@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import './AddressForm.css';
 
-export default function AddressForm({
-  nextStep,
-  setShippingData,
-  shippingData,
-}) {
+export default function AddressForm({ nextStep, setShippingData }) {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');

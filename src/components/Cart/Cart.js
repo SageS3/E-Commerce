@@ -25,6 +25,23 @@ function Cart({
     );
   }
 
+  const cartItemsSum = () => {
+    let sum = 0;
+    cartItems.forEach((item) => {
+      sum += item.quantity; // calculation includes the item and the quantity
+    });
+    return sum;
+  };
+
+  const isPlural = (itemAmount) => {
+    if (itemAmount() > 1) {
+      return 'items';
+    }
+    return 'item';
+  };
+
+  // sub-components
+
   const confirmCheckout = () => {
     return (
       <div className="confirm-checkout-wrapper">
@@ -42,21 +59,6 @@ function Cart({
     );
   };
 
-  const cartItemsSum = () => {
-    let sum = 0;
-    cartItems.forEach((item) => {
-      sum += item.quantity;
-    });
-    return sum;
-  };
-
-  const isPlural = (itemAmount) => {
-    if (itemAmount() > 1) {
-      return 'items';
-    }
-    return 'item';
-  };
-
   const emptyCartMessage = () => <h1>Add Items To Your Cart!</h1>;
 
   const populatedCart = () => (
@@ -66,23 +68,26 @@ function Cart({
     </section>
   );
 
+  const cartList = () => (
+    <div className="cart-item-list">
+      {cartItems.length > 0 && (
+        <CartCard
+          cart={cart}
+          updateCart={updateCart}
+          removeFromCart={removeFromCart}
+          products={products}
+        ></CartCard>
+      )}
+      {cartItems.length > 0 && confirmCheckout()}
+    </div>
+  );
+
   return (
     <div className="cart-page">
       <Navbar setIsOpen={setIsOpen} />
       {cartItems.length > 0 && populatedCart()}
-      <div className="cart-item-list">
-        {cartItems.length === 0 && emptyCartMessage()}
-
-        {cartItems.length > 0 && (
-          <CartCard
-            cart={cart}
-            updateCart={updateCart}
-            removeFromCart={removeFromCart}
-            products={products}
-          ></CartCard>
-        )}
-        {cartItems.length > 0 && confirmCheckout()}
-      </div>
+      {cartItems.length === 0 && emptyCartMessage()}
+      {cartItems.length > 0 && cartList()}
     </div>
   );
 }

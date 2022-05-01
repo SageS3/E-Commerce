@@ -5,21 +5,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 70%;
+  width: 60%;
+  min-width: 300px;
+  max-width: 500px;
   height: 100%;
   top: 0px;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0);
 
   form {
-    width: 70%;
-    height: 100%;
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
     background-color: white;
+    border: 4px solid $secondary-color;
   }
 
   button {
@@ -29,18 +32,15 @@
     border: none;
     padding: 5px;
     font-size: 1.3rem;
+    cursor: pointer;
+    color: $primary-color;
+    font-weight: 600;
+    transition: color 500ms;
   }
 
-  // input {
-  //   margin: 10px;
-  //   width: 50%;
-  //   height: 30px;
-  //   font-size: 1.1rem;
-  //   border: none;
-  //   border-bottom: 1px solid $dark-color;
-  //   outline: none;
-  //   box-sizing: border-box;
-  // }
+  button:hover {
+    color: white;
+  }
 
   .StripeElement {
     width: 100%;

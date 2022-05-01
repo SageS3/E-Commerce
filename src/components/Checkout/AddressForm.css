@@ -1,26 +1,29 @@
 .addressForm {
-  box-shadow: 10px 10px 25px rgba(108, 122, 137, 0.5);
   width: 70%;
-  display: flex;
-  flex-direction: column;
-  height: 500px;
-  justify-content: center;
-  align-items: center;
   padding: 20px;
+  max-width: 500px;
+  min-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 3px solid rgb(119, 200, 170);
+  border-radius: 24px;
 }
 .addressForm h2 {
   color: rgb(64, 63, 76);
+  width: 100%;
+  text-align: center;
 }
 .addressForm input {
   margin: 10px;
-  width: 100%;
-  max-width: 50%;
+  width: 200px;
+  max-width: 70%;
   height: 30px;
   font-size: 15px;
-  border: none;
-  border-bottom: 2px solid rgb(108, 122, 137);
+  border: 2px solid rgb(108, 122, 137);
   outline: none;
-  box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0);
 }
 .addressForm input:focus {
@@ -37,18 +40,19 @@
 }
 .addressForm select {
   margin: 10px;
-  width: 120px;
-  height: 30px;
-  border: 1px solid rgb(108, 122, 137);
+  max-width: 70%;
+  width: 208px;
+  height: 36px;
+  border: 2px solid rgb(108, 122, 137);
   outline: none;
   font-size: 15px;
-  padding: 5px;
   cursor: pointer;
+  outline: none;
 }
 .addressForm .submitAddressFormButton {
   margin: 10px;
-  width: 100%;
-  max-width: 50%;
+  width: 90%;
+  max-width: 90%;
   background-color: rgb(119, 200, 170);
   border: none;
   padding: 5px;

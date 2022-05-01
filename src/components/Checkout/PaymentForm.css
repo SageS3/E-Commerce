@@ -3,21 +3,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 70%;
+  width: 60%;
+  min-width: 300px;
+  max-width: 500px;
   height: 100%;
   top: 0px;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0);
 }
 .paymentFormWrapper form {
-  width: 70%;
-  height: 100%;
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
   background-color: white;
+  border: 4px solid rgb(119, 200, 170);
 }
 .paymentFormWrapper button {
   margin: 10px;
@@ -26,6 +29,13 @@
   border: none;
   padding: 5px;
   font-size: 1.3rem;
+  cursor: pointer;
+  color: rgb(64, 63, 76);
+  font-weight: 600;
+  transition: color 500ms;
+}
+.paymentFormWrapper button:hover {
+  color: white;
 }
 .paymentFormWrapper .StripeElement {
   width: 100%;

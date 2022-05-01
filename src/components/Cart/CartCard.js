@@ -28,6 +28,12 @@ export default function CartCard({
     <div className="cart-list-container">
       {cartItems.map((item) => (
         <div className="item-card" key={item.id}>
+          <button
+            className="delete-item-button"
+            onClick={() => removeFromCart(item.id)}
+          >
+            <CloseIcon />
+          </button>
           <div className="img-wrapper">
             <img className="cart-product-img" src={item.image.url}></img>
           </div>
@@ -36,12 +42,6 @@ export default function CartCard({
               <h3>{item.name}</h3>
               <p>{item.description}</p>
             </section>
-            <button
-              className="delete-item-button"
-              onClick={() => removeFromCart(item.id)}
-            >
-              <CloseIcon />
-            </button>
 
             <section>
               <div className="quantity-adjustment">
@@ -52,8 +52,10 @@ export default function CartCard({
                 <button onClick={() => updateCart(item.id, item.quantity + 1)}>
                   <AddIcon />
                 </button>
+                <p className="price">{`$${
+                  parseInt(item.price.formatted) * item.quantity
+                }`}</p>
               </div>
-              <h3>{`$${parseInt(item.price.formatted) * item.quantity}`}</h3>
             </section>
           </div>
         </div>

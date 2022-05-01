@@ -3,21 +3,20 @@ import './Checkout.css';
 import { AddressForm, PaymentForm } from '../index.js';
 import { Link } from 'react-router-dom';
 import { commerce } from '../../lib/commerce';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 function Checkout({ cart, onCaptureCheckout, order, error }) {
   const [activeStep, setActiveStep] = useState(0);
   const [checkoutToken, setCheckoutToken] = useState(null);
   const [shippingData, setShippingData] = useState({});
 
-  const selectedStep = () => (
-    <div className="selected-step">{steps[activeStep]}</div>
-  );
+  const selectedStep = () => <div className="selected-step"></div>;
 
   const Confirmation = () =>
     order.customer ? (
-      <div>
-        <h1>{`Your Order Token: `}</h1>
-        <h1>{`Thank you for your purchase ${shippingData.firstName}!`}</h1>
+      <div className="confirmation-wrapper">
+        <p>{`Your Order Token: `}</p>
+        <p>{`Thank you for your purchase ${shippingData.firstName}!`}</p>
         <Link to="/">
           <button type="button">Return Home</button>
         </Link>
@@ -44,7 +43,6 @@ function Checkout({ cart, onCaptureCheckout, order, error }) {
     generateToken();
   }, [cart]);
 
-  const steps = ['Address', 'Payment', 'confirmation'];
   const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
   const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
 
@@ -75,34 +73,53 @@ function Checkout({ cart, onCaptureCheckout, order, error }) {
   const backButton = () => {
     if (activeStep === 0) {
       return (
-        <Link to="/cart">
-          <button className="checkoutFormBackButton" type="button">
-            Back
-          </button>
-        </Link>
+        <div className="back-button-container">
+          <Link to="/cart">
+            <ArrowBackIosIcon sx={{ color: 'rgb(119,200,170)' }} />
+            <button className="back-button" onClick={() => backStep()}>
+              Back
+            </button>
+          </Link>
+        </div>
       );
     }
     return (
-      <button className="checkoutFormBackButton" onClick={() => backStep()}>
-        Back
-      </button>
+      <div className="back-button-container">
+        <Link to="/checkout">
+          <ArrowBackIosIcon sx={{ color: 'rgb(119,200,170)' }} />
+          <button className="back-button" onClick={() => backStep()}>
+            Back
+          </button>
+        </Link>
+      </div>
     );
   };
 
   return (
     <div className="checkout-page">
-      {backButton()}
+      {activeStep < 2 && backButton()}
+      <section className="steps">
+        <p>Shipping</p>
+        <p>Payment</p>
+        <p>Confirmation</p>
+      </section>
       <div className="stepper">
         {activeStep === 0 ? (
           selectedStep()
         ) : (
-          <div className="step step-one">{steps[0]}</div>
+          <div className="step step-one"></div>
         )}
         <div className="step-divider"></div>
         {activeStep === 1 ? (
           selectedStep()
         ) : (
-          <div className="step step-two">{steps[1]}</div>
+          <div className="step step-two"></div>
+        )}
+        <div className="step-divider"></div>
+        {activeStep === 2 ? (
+          selectedStep()
+        ) : (
+          <div className="step step-three"></div>
         )}
       </div>
 

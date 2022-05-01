@@ -3,7 +3,7 @@
 .home-page {
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr minmax(30%, 80%) 1fr;
+  grid-template-columns: 1fr minmax(30%, 1200px) 1fr;
   grid-template-rows: 1fr 4fr 0.3fr;
   grid-template-areas:
     ' nav nav nav'
@@ -25,8 +25,9 @@
   grid-area: main;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
 }
 
 .footer {
