@@ -10,7 +10,11 @@ function ContactModal({ setOpen }) {
     <>
       <div className="contact-wrapper">
         <div className="contact-form">
-          <button className="close-button" onClick={() => setOpen(false)}>
+          <button
+            type="button"
+            className="close-button"
+            onClick={() => setOpen(false)}
+          >
             <CloseIcon></CloseIcon>
           </button>
           <h1>Contact Us!</h1>
@@ -22,7 +26,13 @@ function ContactModal({ setOpen }) {
             cols="30"
             required
           ></textarea>
-          <button className="submit-button">Submit</button>
+          <button
+            type="submit"
+            className="submit-button"
+            onClick={() => setOpen(false)}
+          >
+            Submit
+          </button>
           <section>
             <InstagramIcon />
             <FacebookIcon />
