@@ -12,6 +12,14 @@ function Checkout({ cart, onCaptureCheckout, order, error }) {
 
   const selectedStep = () => <div className="selected-step"></div>;
 
+  const loadingAnimation = () => (
+    <div className="cart-page-loading">
+      <div className="loading_dot dot_one"></div>
+      <div className="loading_dot dot_two"></div>
+      <div className="loading_dot dot_three"></div>
+    </div>
+  );
+
   const Confirmation = () =>
     order.customer ? (
       <div className="confirmation-wrapper">
@@ -125,6 +133,7 @@ function Checkout({ cart, onCaptureCheckout, order, error }) {
 
       <div className="checkout-main">
         {activeStep === 2 ? <Confirmation /> : checkoutToken && <Form />}
+        {!checkoutToken && loadingAnimation()}
       </div>
       <div className="checkout-footer"></div>
     </div>
