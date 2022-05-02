@@ -54,7 +54,7 @@ export default function AddressForm({ nextStep, setShippingData }) {
           placeholder="First Name *"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
-        ></input>
+        />
         <input
           required
           name={lastName}
@@ -62,27 +62,27 @@ export default function AddressForm({ nextStep, setShippingData }) {
           placeholder="last Name *"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
-        ></input>
+        />
         <input
           required
           type="text"
           placeholder="Email *"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-        ></input>
+        />
         <input
           required
           type="text"
           placeholder="Address *"
           value={address}
           onChange={(e) => setAddress(e.target.value)}
-        ></input>
+        />
         <input
           type="text"
           placeholder="Apt#"
           value={apartmentNumber}
           onChange={(e) => setApartmentNumber(e.target.value)}
-        ></input>
+        />
         <select value={country} onChange={(e) => setCountry(e.target.value)}>
           {selectCountry()}
         </select>
@@ -95,14 +95,14 @@ export default function AddressForm({ nextStep, setShippingData }) {
           placeholder="City *"
           value={city}
           onChange={(e) => setCity(e.target.value)}
-        ></input>
+        />
         <input
           type="text"
           required
           placeholder="Zip *"
           value={zip}
           onChange={(e) => setZip(e.target.value)}
-        ></input>
+        />
         <button className="submitAddressFormButton" type="submit">
           Submit
         </button>
