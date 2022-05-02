@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './Checkout.css';
 import { AddressForm, PaymentForm } from '../index.js';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { commerce } from '../../lib/commerce';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
-function Checkout({ cart, onCaptureCheckout, order, error }) {
+function Checkout({ cart, onCaptureCheckout, order }) {
   const [activeStep, setActiveStep] = useState(0);
   const [checkoutToken, setCheckoutToken] = useState(null);
   const [shippingData, setShippingData] = useState({});
-
+  const navigate = useNavigate();
   const selectedStep = () => <div className="selected-step"></div>;
 
   const loadingAnimation = () => (
@@ -30,11 +30,7 @@ function Checkout({ cart, onCaptureCheckout, order, error }) {
         </Link>
       </div>
     ) : (
-      <div className="loading_animation">
-        <div className="loading_dot dot_one"></div>
-        <div className="loading_dot dot_two"></div>
-        <div className="loading_dot dot_three"></div>
-      </div>
+      loadingAnimation()
     );
 
   useEffect(() => {
@@ -45,7 +41,7 @@ function Checkout({ cart, onCaptureCheckout, order, error }) {
         });
         setCheckoutToken(token);
       } catch (error) {
-        console.log(error);
+        navigate('/');
       }
     };
     generateToken();
@@ -79,21 +75,9 @@ function Checkout({ cart, onCaptureCheckout, order, error }) {
     );
 
   const backButton = () => {
-    if (activeStep === 0) {
-      return (
-        <div className="back-button-container">
-          <Link to="/cart">
-            <ArrowBackIosIcon sx={{ color: 'rgb(119,200,170)' }} />
-            <button className="back-button" onClick={() => backStep()}>
-              Back
-            </button>
-          </Link>
-        </div>
-      );
-    }
     return (
       <div className="back-button-container">
-        <Link to="/checkout">
+        <Link to="/cart">
           <ArrowBackIosIcon sx={{ color: 'rgb(119,200,170)' }} />
           <button className="back-button" onClick={() => backStep()}>
             Back
