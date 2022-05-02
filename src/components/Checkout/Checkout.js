@@ -23,8 +23,8 @@ function Checkout({ cart, onCaptureCheckout, order, error }) {
   const Confirmation = () =>
     order.customer ? (
       <div className="confirmation-wrapper">
-        <p>{`Your Order Token: `}</p>
-        <p>{`Thank you for your purchase ${shippingData.firstName}!`}</p>
+        <p>Your order ref: {order.customer_reference}</p>
+        <p>{`Thank you for your purchase ${order.customer.firstName}!`}</p>
         <Link to="/">
           <button type="button">Return Home</button>
         </Link>
