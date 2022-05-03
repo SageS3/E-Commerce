@@ -27,7 +27,7 @@ function PaymentForm({
     });
 
     if (error) {
-      console.error(error.message);
+      console.log(error.message);
     } else {
       const orderData = {
         line_items: checkoutToken.live.line_items,
