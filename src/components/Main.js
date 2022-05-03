@@ -6,7 +6,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import Navbar from '../components/Navbar';
 
-function Main({ handleAddToCart, products, setIsOpen, cart }) {
+function Main({ handleAddToCart, products, setIsOpen, cart, toggleSidebar }) {
   const isEmpty = !cart.line_items;
   if (isEmpty) {
     return (
@@ -19,7 +19,11 @@ function Main({ handleAddToCart, products, setIsOpen, cart }) {
   }
   return (
     <div className="home-page">
-      <Navbar totalItems={cart.total_items} setIsOpen={setIsOpen}></Navbar>
+      <Navbar
+        totalItems={cart.total_items}
+        setIsOpen={setIsOpen}
+        toggleSidebar={toggleSidebar}
+      ></Navbar>
       <div className="product-grid">
         <ProductCard
           products={products}

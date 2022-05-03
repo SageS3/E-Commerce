@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from './lib/commerce';
-import { Main, Cart, Checkout, ContactModal } from './components';
+import {
+  Main,
+  Cart,
+  Checkout,
+  ContactModal,
+  MobileSidebar,
+} from './components';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
@@ -8,6 +14,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -75,6 +82,7 @@ function App() {
                 handleAddToCart={handleAddToCart}
                 products={products}
                 setIsOpen={setIsContactModalOpen}
+                toggleSidebar={setIsSidebarOpen}
                 cart={cart}
               ></Main> // container composition
             }
@@ -110,6 +118,12 @@ function App() {
       </Router>
       {isContactModalOpen && (
         <ContactModal setOpen={setIsContactModalOpen}></ContactModal>
+      )}
+      {isSidebarOpen && (
+        <MobileSidebar
+          totalItems={cart.total_items}
+          setIsOpen={setIsContactModalOpen}
+        />
       )}
     </div>
   );
