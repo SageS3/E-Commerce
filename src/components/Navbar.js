@@ -2,7 +2,7 @@ import './Navbar.css';
 import { Link } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-function Navbar({ totalItems, setIsOpen, toggleSidebar }) {
+function Navbar({ totalItems, setIsOpen, toggleSidebar, isSidebarOpen }) {
   const itemCountBadge = () => {
     return <div className="item-count">{totalItems}</div>;
   };
@@ -12,7 +12,7 @@ function Navbar({ totalItems, setIsOpen, toggleSidebar }) {
       <div
         type="button"
         className="hamburger-menu"
-        onClick={() => toggleSidebar(true)}
+        onClick={() => toggleSidebar(!isSidebarOpen)} // toggleSidebar(!isSidebarOpen)
       >
         <div></div>
         <div></div>

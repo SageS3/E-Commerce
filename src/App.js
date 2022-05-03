@@ -82,6 +82,7 @@ function App() {
                 handleAddToCart={handleAddToCart}
                 products={products}
                 setIsOpen={setIsContactModalOpen}
+                isSidebarOpen={isSidebarOpen}
                 toggleSidebar={setIsSidebarOpen}
                 cart={cart}
               ></Main> // container composition

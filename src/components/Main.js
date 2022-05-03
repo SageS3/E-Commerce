@@ -6,7 +6,14 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import Navbar from '../components/Navbar';
 
-function Main({ handleAddToCart, products, setIsOpen, cart, toggleSidebar }) {
+function Main({
+  handleAddToCart,
+  products,
+  setIsOpen,
+  cart,
+  toggleSidebar,
+  isSidebarOpen,
+}) {
   const isEmpty = !cart.line_items;
   if (isEmpty) {
     return (
@@ -22,6 +29,7 @@ function Main({ handleAddToCart, products, setIsOpen, cart, toggleSidebar }) {
       <Navbar
         totalItems={cart.total_items}
         setIsOpen={setIsOpen}
+        isSidebarOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
       ></Navbar>
       <div className="product-grid">
