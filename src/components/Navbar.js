@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import './Navbar.css';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
+import { useSpring, animated } from 'react-spring';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 function Navbar({ totalItems, setIsOpen }) {
   const itemCountBadge = () => {
@@ -34,7 +35,7 @@ function Navbar({ totalItems, setIsOpen }) {
 
   return (
     <div className="navbar">
-      <div type="button" className="hamburger-menu">
+      <div className="hamburger-menu">
         <div></div>
         <div></div>
         <div></div>

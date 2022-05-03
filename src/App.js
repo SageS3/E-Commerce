@@ -8,7 +8,6 @@ function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-  const [isPreviewModalOpen, setIsPreviewModalOpen] = useState(false);
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -111,12 +110,6 @@ function App() {
       </Router>
       {isContactModalOpen && (
         <ContactModal setOpen={setIsContactModalOpen}></ContactModal>
-      )}
-      {isPreviewModalOpen && (
-        <PreviewModal
-          setOpen={setIsPreviewModalOpen}
-          products={products}
-        ></PreviewModal>
       )}
     </div>
   );
