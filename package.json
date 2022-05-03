@@ -11,6 +11,7 @@
     "dotenv": "^16.0.0",
     "react-router-dom": "^6.2.1",
     "react-scripts": "^4.0.3",
+    "react-spring": "^9.4.4",
     "stripe": "^8.215.0"
   },
   "scripts": {
