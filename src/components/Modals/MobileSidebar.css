@@ -1,19 +1,54 @@
 .dark-out {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0);
   position: fixed;
   left: 50%;
   top: 57%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  -webkit-animation: fade-in 400ms ease-in forwards;
+          animation: fade-in 400ms ease-in forwards;
+  position: absolute;
+}
+@-webkit-keyframes fade-in {
+  100% {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+@keyframes fade-in {
+  100% {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
 }
 .dark-out .mobile-sidebar-wrapper {
+  position: relative;
+  left: -30%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   width: 50%;
   background-color: rgb(119, 200, 170);
   height: 100%;
+  -webkit-animation: slide-in 230ms ease-in-out forwards;
+          animation: slide-in 230ms ease-in-out forwards;
+}
+@-webkit-keyframes slide-in {
+  100% {
+    position: relative;
+    left: 25%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes slide-in {
+  100% {
+    position: relative;
+    left: 25%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 .dark-out .mobile-sidebar-wrapper a,
 .dark-out .mobile-sidebar-wrapper button {
