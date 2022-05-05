@@ -11,6 +11,8 @@ function Cart({
   removeFromCart,
   setIsOpen,
   products,
+  toggleSidebar,
+  isSidebarOpen,
 }) {
   const cartItems = cart.line_items;
   const isEmpty = !cartItems;
@@ -84,7 +86,11 @@ function Cart({
 
   return (
     <div className="cart-page">
-      <Navbar setIsOpen={setIsOpen} />
+      <Navbar
+        setIsOpen={setIsOpen}
+        toggleSidebar={toggleSidebar}
+        isSidebarOpen={isSidebarOpen}
+      />
       {cartItems.length > 0 && populatedCart()}
       {cartItems.length === 0 && emptyCartMessage()}
       {cartItems.length > 0 && cartList()}

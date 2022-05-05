@@ -100,6 +100,8 @@ function App() {
                 cart={cart}
                 products={products}
                 setIsOpen={setIsContactModalOpen}
+                isSidebarOpen={isSidebarOpen}
+                toggleSidebar={setIsSidebarOpen}
               />
             }
           />
