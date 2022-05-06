@@ -24,6 +24,7 @@ function Main({
       </div>
     );
   }
+
   return (
     <div className="home-page">
       <Navbar

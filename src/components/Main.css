@@ -4,6 +4,7 @@
   grid-template-columns: 1fr minmax(30%, 1200px) 1fr;
   grid-template-rows: 1fr 4fr 0.3fr;
   grid-template-areas: " nav nav nav" " . main . " "footer footer footer";
+  overflow-y: scroll;
 }
 
 .loading-page {
