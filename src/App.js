@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from './lib/commerce';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
 import {
   Main,
   Cart,
@@ -7,8 +9,6 @@ import {
   ContactModal,
   MobileSidebar,
 } from './components';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -85,7 +85,7 @@ function App() {
                 isSidebarOpen={isSidebarOpen}
                 toggleSidebar={setIsSidebarOpen}
                 cart={cart}
-              ></Main> // container composition
+              />
             }
           />
 
@@ -114,14 +114,12 @@ function App() {
                 order={order}
                 onCaptureCheckout={handleCaptureCheckout}
                 error={errorMessage}
-              ></Checkout>
+              />
             }
           />
         </Routes>
       </Router>
-      {isContactModalOpen && (
-        <ContactModal setOpen={setIsContactModalOpen}></ContactModal>
-      )}
+      {isContactModalOpen && <ContactModal setOpen={setIsContactModalOpen} />}
       {isSidebarOpen && (
         <MobileSidebar
           totalItems={cart.total_items}
