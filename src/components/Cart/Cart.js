@@ -19,7 +19,7 @@ function Cart({
 
   if (isEmpty) {
     return (
-      <div className="cart-page-loading">
+      <div className="loading-animation">
         <div className="loading_dot dot_one"></div>
         <div className="loading_dot dot_two"></div>
         <div className="loading_dot dot_three"></div>

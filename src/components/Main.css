@@ -46,30 +46,31 @@
   color: rgb(119, 200, 170);
 }
 
-.loading_animation {
+.loading-animation {
   position: absolute;
   display: flex;
   left: 50%;
   top: 50%;
   transform: translate(-50px, -50px);
   justify-content: center;
+  align-items: center;
 }
-.loading_animation .loading_dot {
+.loading-animation .loading_dot {
   width: 30px;
   height: 30px;
   background-color: rgb(64, 63, 76);
   border-radius: 100px;
   margin: 5px;
 }
-.loading_animation .dot_one {
+.loading-animation .dot_one {
   -webkit-animation: wave 400ms ease-in-out 200ms infinite alternate;
           animation: wave 400ms ease-in-out 200ms infinite alternate;
 }
-.loading_animation .dot_two {
+.loading-animation .dot_two {
   -webkit-animation: wave 400ms ease-in-out 400ms infinite alternate;
           animation: wave 400ms ease-in-out 400ms infinite alternate;
 }
-.loading_animation .dot_three {
+.loading-animation .dot_three {
   -webkit-animation: wave 400ms ease-in-out 600ms infinite alternate;
           animation: wave 400ms ease-in-out 600ms infinite alternate;
 }

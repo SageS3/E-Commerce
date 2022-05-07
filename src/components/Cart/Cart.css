@@ -113,52 +113,7 @@
 }
 .cart-page h1 {
   color: rgb(119, 200, 170);
-}
-
-.cart-page-loading {
-  position: absolute;
-  display: flex;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50px, -50px);
-  justify-content: center;
-}
-.cart-page-loading .loading_dot {
-  width: 30px;
-  height: 30px;
-  background-color: rgb(64, 63, 76);
-  border-radius: 100px;
-  margin: 5px;
-}
-.cart-page-loading .dot_one {
-  -webkit-animation: wave 400ms ease-in-out 200ms infinite alternate;
-          animation: wave 400ms ease-in-out 200ms infinite alternate;
-}
-.cart-page-loading .dot_two {
-  -webkit-animation: wave 400ms ease-in-out 400ms infinite alternate;
-          animation: wave 400ms ease-in-out 400ms infinite alternate;
-}
-.cart-page-loading .dot_three {
-  -webkit-animation: wave 400ms ease-in-out 600ms infinite alternate;
-          animation: wave 400ms ease-in-out 600ms infinite alternate;
-}
-@-webkit-keyframes wave {
-  0% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(5px);
-    background-color: rgb(119, 200, 170);
-  }
-}
-@keyframes wave {
-  0% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(5px);
-    background-color: rgb(119, 200, 170);
-  }
+  padding: 20px;
 }
 
 @media only screen and (max-width: 1000px) {

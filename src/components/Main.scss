@@ -51,13 +51,14 @@
   color: rgb(119, 200, 170);
 }
 
-.loading_animation {
+.loading-animation {
   position: absolute;
   display: flex;
   left: 50%;
   top: 50%;
   transform: translate(-50px, -50px);
   justify-content: center;
+  align-items: center;
 
   .loading_dot {
     width: 30px;

@@ -17,7 +17,7 @@ function Main({
   const isEmpty = !cart.line_items;
   if (isEmpty) {
     return (
-      <div className="loading_animation">
+      <div className="loading-animation">
         <div className="loading_dot dot_one"></div>
         <div className="loading_dot dot_two"></div>
         <div className="loading_dot dot_three"></div>

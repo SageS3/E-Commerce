@@ -120,47 +120,7 @@
 
   h1 {
     color: rgb(119, 200, 170);
-  }
-}
-
-// cart loading page animation
-
-.cart-page-loading {
-  position: absolute;
-  display: flex;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50px, -50px);
-  justify-content: center;
-
-  .loading_dot {
-    width: 30px;
-    height: 30px;
-    background-color: $primary-color;
-    border-radius: 100px;
-    margin: 5px;
-  }
-
-  .dot_one {
-    animation: wave 400ms ease-in-out 200ms infinite alternate;
-  }
-
-  .dot_two {
-    animation: wave 400ms ease-in-out 400ms infinite alternate;
-  }
-
-  .dot_three {
-    animation: wave 400ms ease-in-out 600ms infinite alternate;
-  }
-
-  @keyframes wave {
-    0% {
-      transform: translateY(0px);
-    }
-    100% {
-      transform: translateY(5px);
-      background-color: rgb(119, 200, 170);
-    }
+    padding: 20px;
   }
 }
 
