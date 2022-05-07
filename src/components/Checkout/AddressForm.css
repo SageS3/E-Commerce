@@ -10,6 +10,7 @@
   background-color: white;
   border: 3px solid rgb(119, 200, 170);
   border-radius: 24px;
+  margin-bottom: 20px;
 }
 .addressForm h2 {
   color: rgb(64, 63, 76);

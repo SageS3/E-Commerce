@@ -14,12 +14,13 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  height: 600px;
+  height: 550px;
   width: 38%;
   max-width: 750px;
   min-width: 300px;
   background-color: rgb(230, 230, 230);
   box-shadow: 6px 6px 10px rgb(64, 63, 76);
+  margin-bottom: 20px;
 }
 .cart-page .cart-header-display {
   display: flex;
