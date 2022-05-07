@@ -9,15 +9,15 @@ function Navbar({ totalItems, setIsOpen, toggleSidebar, isSidebarOpen }) {
 
   return (
     <div className="navbar">
-      <div
+      <button
         type="button"
-        className="hamburger-menu"
+        className="hamburger-nav-button"
         onClick={() => toggleSidebar(!isSidebarOpen)} // toggleSidebar(!isSidebarOpen)
       >
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav className="navbar-wrapper">
         <Link to="/">
           <button type="button">Home</button>
