@@ -80,15 +80,15 @@
   align-items: center;
   margin: 4px 0 4px 0;
 }
-.cart-list-container .item-card section:last-of-type .quantity {
+.cart-list-container .item-card section:last-of-type .quantity-adjustment .quantity {
   font-weight: bolder;
   font-size: 1.1rem;
 }
-.cart-list-container .item-card section:last-of-type .price {
+.cart-list-container .item-card section:last-of-type .quantity-adjustment .price {
   font-weight: bolder;
   font-size: 1.2rem;
 }
-.cart-list-container .item-card section:last-of-type button:first-of-type {
+.cart-list-container .item-card section:last-of-type .quantity-adjustment button:first-of-type {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,8 +98,9 @@
   padding: 2px;
   margin: 0 20px 0 20px;
   cursor: pointer;
+  color: rgba(0, 0, 0, 0.7);
 }
-.cart-list-container .item-card section:last-of-type button:last-of-type {
+.cart-list-container .item-card section:last-of-type .quantity-adjustment button:last-of-type {
   display: flex;
   align-items: center;
   justify-content: center;

@@ -11,6 +11,11 @@
   position: absolute;
   overflow: hidden;
 }
+.dark-out .item-count {
+  color: white;
+  border: none;
+  outline: none;
+}
 @-webkit-keyframes fade-in {
   100% {
     background-color: rgba(0, 0, 0, 0.4);

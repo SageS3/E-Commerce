@@ -6,7 +6,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 function MobileSidebar({ totalItems, setIsOpen, setIsSidebarOpen }) {
   const itemCountBadge = () => {
-    return <div className="item-count">{totalItems}</div>;
+    return <p className="item-count">{totalItems}</p>;
   };
   return ReactDOM.createPortal(
     <div className="dark-out">

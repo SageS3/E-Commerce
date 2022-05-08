@@ -12,6 +12,12 @@
   position: absolute;
   overflow: hidden;
 
+  .item-count {
+    color: white;
+    border: none;
+    outline: none;
+  }
+
   @keyframes fade-in {
     100% {
       background-color: rgba(0, 0, 0, 0.4);
