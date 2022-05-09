@@ -1,10 +1,13 @@
+import React, { useContext } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { PropContext } from '../App';
 
-function Navbar({ totalItems, setIsOpen, toggleSidebar, isSidebarOpen }) {
+function Navbar() {
+  const navbarProps = useContext(PropContext);
   const itemCountBadge = () => {
-    return <div className="item-count">{totalItems}</div>;
+    return <p className="item-count">{navbarProps.cart.total_items}</p>;
   };
 
   return (
@@ -12,7 +15,7 @@ function Navbar({ totalItems, setIsOpen, toggleSidebar, isSidebarOpen }) {
       <button
         type="button"
         className="hamburger-nav-button"
-        onClick={() => toggleSidebar(!isSidebarOpen)} // toggleSidebar(!isSidebarOpen)
+        onClick={() => navbarProps.toggleSidebar(!navbarProps.isSidebarOpen)} // toggleSidebar(!isSidebarOpen)
       >
         <span></span>
         <span></span>
@@ -22,14 +25,14 @@ function Navbar({ totalItems, setIsOpen, toggleSidebar, isSidebarOpen }) {
         <Link to="/">
           <button type="button">Home</button>
         </Link>
-        <button type="button" onClick={() => setIsOpen(true)}>
+        <button type="button" onClick={() => navbarProps.setIsOpen(true)}>
           Contact
         </button>
         <button type="button">About</button>
         <Link to="/cart">
           <button type="button">
             <ShoppingCartIcon />
-            {totalItems > 0 && itemCountBadge()}
+            {navbarProps.cart.total_items > 0 && itemCountBadge()}
           </button>
         </Link>
       </nav>

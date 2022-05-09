@@ -10,6 +10,8 @@ import {
   MobileSidebar,
 } from './components';
 
+export const PropContext = React.createContext();
+
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
@@ -72,62 +74,75 @@ function App() {
 
   return (
     <div>
-      <Router>
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              <Main
-                handleAddToCart={handleAddToCart}
-                products={products}
-                setIsOpen={setIsContactModalOpen}
-                isSidebarOpen={isSidebarOpen}
-                toggleSidebar={setIsSidebarOpen}
-                cart={cart}
-              />
-            }
-          />
+      <PropContext.Provider
+        value={{
+          handleAddToCart: handleAddToCart,
+          products: products,
+          setIsOpen: setIsContactModalOpen,
+          isSidebarOpen: isSidebarOpen,
+          toggleSidebar: setIsSidebarOpen,
+          cart: cart,
+        }}
+      >
+        <Router>
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <Main
+                  handleAddToCart={handleAddToCart}
+                  products={products}
+                  setIsOpen={setIsContactModalOpen}
+                  isSidebarOpen={isSidebarOpen}
+                  toggleSidebar={setIsSidebarOpen}
+                  cart={cart}
+                />
+              }
+            />
 
-          <Route
-            exact
-            path="/cart"
-            element={
-              <Cart
-                updateCart={handleUpdateCart}
-                emptyCart={handleEmptyCart}
-                removeFromCart={handleRemoveFromCart}
-                cart={cart}
-                products={products}
-                setIsOpen={setIsContactModalOpen}
-                isSidebarOpen={isSidebarOpen}
-                toggleSidebar={setIsSidebarOpen}
-              />
-            }
-          />
-          <Route
-            exact
-            path="/checkout"
-            element={
-              <Checkout
-                cart={cart}
-                order={order}
-                onCaptureCheckout={handleCaptureCheckout}
-                error={errorMessage}
-              />
-            }
-          />
-        </Routes>
+            <Route
+              exact
+              path="/cart"
+              element={
+                <Cart
+                  updateCart={handleUpdateCart}
+                  emptyCart={handleEmptyCart}
+                  removeFromCart={handleRemoveFromCart}
+                  cart={cart}
+                  products={products}
+                  setIsOpen={setIsContactModalOpen}
+                  isSidebarOpen={isSidebarOpen}
+                  toggleSidebar={setIsSidebarOpen}
+                />
+              }
+            />
+            <Route
+              exact
+              path="/checkout"
+              element={
+                <Checkout
+                  cart={cart}
+                  order={order}
+                  onCaptureCheckout={handleCaptureCheckout}
+                  error={errorMessage}
+                />
+              }
+            />
+          </Routes>
 
-        {isContactModalOpen && <ContactModal setOpen={setIsContactModalOpen} />}
-        {isSidebarOpen && (
-          <MobileSidebar
-            totalItems={cart.total_items}
-            setIsOpen={setIsContactModalOpen}
-            setIsSidebarOpen={setIsSidebarOpen}
-          />
-        )}
-      </Router>
+          {isContactModalOpen && (
+            <ContactModal setOpen={setIsContactModalOpen} />
+          )}
+          {isSidebarOpen && (
+            <MobileSidebar
+              totalItems={cart.total_items}
+              setIsOpen={setIsContactModalOpen}
+              setIsSidebarOpen={setIsSidebarOpen}
+            />
+          )}
+        </Router>
+      </PropContext.Provider>
     </div>
   );
 }

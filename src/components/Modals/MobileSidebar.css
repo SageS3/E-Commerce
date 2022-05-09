@@ -12,9 +12,14 @@
   overflow: hidden;
 }
 .dark-out .item-count {
-  color: white;
-  border: none;
-  outline: none;
+  width: 10px;
+  height: 10px;
+  padding: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  font-size: 1rem;
 }
 @-webkit-keyframes fade-in {
   100% {

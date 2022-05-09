@@ -6,15 +6,9 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import Navbar from '../components/Navbar';
 
-function Main({
-  handleAddToCart,
-  products,
-  setIsOpen,
-  cart,
-  toggleSidebar,
-  isSidebarOpen,
-}) {
+function Main({ handleAddToCart, products, cart }) {
   const isEmpty = !cart.line_items;
+
   if (isEmpty) {
     return (
       <div className="loading-animation">
@@ -27,12 +21,7 @@ function Main({
 
   return (
     <div className="home-page">
-      <Navbar
-        totalItems={cart.total_items}
-        setIsOpen={setIsOpen}
-        isSidebarOpen={isSidebarOpen}
-        toggleSidebar={toggleSidebar}
-      ></Navbar>
+      <Navbar></Navbar>
       <div className="product-grid">
         <ProductCard
           products={products}
