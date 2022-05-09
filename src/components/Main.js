@@ -6,7 +6,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import Navbar from '../components/Navbar';
 
-function Main({ handleAddToCart, products, cart }) {
+function Main({ cart }) {
   const isEmpty = !cart.line_items;
 
   if (isEmpty) {
@@ -21,12 +21,9 @@ function Main({ handleAddToCart, products, cart }) {
 
   return (
     <div className="home-page">
-      <Navbar></Navbar>
+      <Navbar />
       <div className="product-grid">
-        <ProductCard
-          products={products}
-          addToCart={handleAddToCart}
-        ></ProductCard>
+        <ProductCard />
       </div>
       <div className="footer">
         <InstagramIcon />

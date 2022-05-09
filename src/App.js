@@ -82,41 +82,15 @@ function App() {
           isSidebarOpen: isSidebarOpen,
           toggleSidebar: setIsSidebarOpen,
           cart: cart,
+          updateCart: handleUpdateCart,
+          emptyCart: handleEmptyCart,
+          removeFromCart: handleRemoveFromCart,
         }}
       >
         <Router>
           <Routes>
-            <Route
-              exact
-              path="/"
-              element={
-                <Main
-                  handleAddToCart={handleAddToCart}
-                  products={products}
-                  setIsOpen={setIsContactModalOpen}
-                  isSidebarOpen={isSidebarOpen}
-                  toggleSidebar={setIsSidebarOpen}
-                  cart={cart}
-                />
-              }
-            />
-
-            <Route
-              exact
-              path="/cart"
-              element={
-                <Cart
-                  updateCart={handleUpdateCart}
-                  emptyCart={handleEmptyCart}
-                  removeFromCart={handleRemoveFromCart}
-                  cart={cart}
-                  products={products}
-                  setIsOpen={setIsContactModalOpen}
-                  isSidebarOpen={isSidebarOpen}
-                  toggleSidebar={setIsSidebarOpen}
-                />
-              }
-            />
+            <Route exact path="/" element={<Main cart={cart} />} />
+            <Route exact path="/cart" element={<Cart />} />
             <Route
               exact
               path="/checkout"

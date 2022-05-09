@@ -1,19 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Navbar } from '../index.js';
 import './Cart.css';
 import { Link } from 'react-router-dom';
 import CartCard from './CartCard';
+import { PropContext } from '../../App.js';
 
-function Cart({
-  cart,
-  updateCart,
-  emptyCart,
-  removeFromCart,
-  setIsOpen,
-  products,
-  toggleSidebar,
-  isSidebarOpen,
-}) {
+function Cart() {
+  const cartProps = useContext(PropContext);
+  const { cart, products, updateCart, emptyCart, removeFromCart } = cartProps;
   const cartItems = cart.line_items;
   const isEmpty = !cartItems;
 
@@ -86,11 +80,7 @@ function Cart({
 
   return (
     <div className="cart-page">
-      <Navbar
-        setIsOpen={setIsOpen}
-        toggleSidebar={toggleSidebar}
-        isSidebarOpen={isSidebarOpen}
-      />
+      <Navbar />
       {cartItems.length > 0 && populatedCart()}
       {cartItems.length === 0 && emptyCartMessage()}
       {cartItems.length > 0 && cartList()}

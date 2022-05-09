@@ -6,8 +6,10 @@ import { PropContext } from '../App';
 
 function Navbar() {
   const navbarProps = useContext(PropContext);
+  const { isSidebarOpen, setIsOpen, cart, toggleSidebar } = navbarProps;
+
   const itemCountBadge = () => {
-    return <p className="item-count">{navbarProps.cart.total_items}</p>;
+    return <p className="item-count">{cart.total_items}</p>;
   };
 
   return (
@@ -15,7 +17,7 @@ function Navbar() {
       <button
         type="button"
         className="hamburger-nav-button"
-        onClick={() => navbarProps.toggleSidebar(!navbarProps.isSidebarOpen)} // toggleSidebar(!isSidebarOpen)
+        onClick={() => toggleSidebar(!isSidebarOpen)} // toggleSidebar(!isSidebarOpen)
       >
         <span></span>
         <span></span>
@@ -25,14 +27,14 @@ function Navbar() {
         <Link to="/">
           <button type="button">Home</button>
         </Link>
-        <button type="button" onClick={() => navbarProps.setIsOpen(true)}>
+        <button type="button" onClick={() => setIsOpen(true)}>
           Contact
         </button>
         <button type="button">About</button>
         <Link to="/cart">
           <button type="button">
             <ShoppingCartIcon />
-            {navbarProps.cart.total_items > 0 && itemCountBadge()}
+            {cart.total_items > 0 && itemCountBadge()}
           </button>
         </Link>
       </nav>

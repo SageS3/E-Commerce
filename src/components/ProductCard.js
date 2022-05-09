@@ -1,6 +1,10 @@
+import React, { useContext } from 'react';
+import { PropContext } from '../App';
 import './ProductCard.css';
 
-function ProductCard({ products, addToCart }) {
+function ProductCard() {
+  const productCardProps = useContext(PropContext);
+  const { products, handleAddToCart } = productCardProps;
   return (
     <>
       {products.map((product) => (
@@ -14,7 +18,7 @@ function ProductCard({ products, addToCart }) {
           <p className="price-tag">{product.price.formatted_with_symbol}</p>
           <button
             className="add-to-checkout-button"
-            onClick={() => addToCart(product.id, 1)}
+            onClick={() => handleAddToCart(product.id, 1)}
           >
             Add To Cart
           </button>
