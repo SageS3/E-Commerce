@@ -13,7 +13,6 @@
   overflow: hidden;
 
   .item-count {
-    // background-color: $secondary-color;
     width: 10px;
     height: 10px;
     padding: 7px;
@@ -29,6 +28,7 @@
       background-color: rgba(0, 0, 0, 0.4);
     }
   }
+
   .mobile-sidebar-wrapper {
     position: relative;
     left: -30%;
@@ -51,6 +51,10 @@
         top: 50%;
         transform: translate(-50%, -50%);
       }
+    }
+
+    a {
+      text-decoration: none;
     }
 
     a:first-of-type {

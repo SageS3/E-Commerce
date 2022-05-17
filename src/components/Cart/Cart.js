@@ -36,8 +36,6 @@ function Cart() {
     return 'item';
   };
 
-  // sub-components
-
   const confirmCheckout = () => {
     return (
       <div className="confirm-checkout-wrapper">

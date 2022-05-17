@@ -12,6 +12,8 @@ function Navbar() {
     return <p className="item-count">{cart.total_items}</p>;
   };
 
+  const cartPage = window.location.pathname != '/cart';
+
   return (
     <div className="navbar">
       <button
@@ -23,6 +25,7 @@ function Navbar() {
         <span></span>
         <span></span>
       </button>
+      {!isSidebarOpen && cart.total_items > 0 && cartPage && itemCountBadge()}
       <nav className="navbar-wrapper">
         <Link to="/">
           <button type="button">Home</button>

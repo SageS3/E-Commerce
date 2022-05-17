@@ -76,14 +76,14 @@ function App() {
     <div>
       <PropContext.Provider
         value={{
-          handleAddToCart: handleAddToCart,
-          products: products,
-          setIsOpen: setIsContactModalOpen,
-          isSidebarOpen: isSidebarOpen,
-          toggleSidebar: setIsSidebarOpen,
           cart: cart,
-          updateCart: handleUpdateCart,
+          products: products,
+          isSidebarOpen: isSidebarOpen,
           emptyCart: handleEmptyCart,
+          updateCart: handleUpdateCart,
+          toggleSidebar: setIsSidebarOpen,
+          handleAddToCart: handleAddToCart,
+          setIsOpen: setIsContactModalOpen,
           removeFromCart: handleRemoveFromCart,
         }}
       >

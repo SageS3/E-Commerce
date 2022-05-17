@@ -63,6 +63,9 @@
     transform: translate(-50%, -50%);
   }
 }
+.dark-out .mobile-sidebar-wrapper a {
+  text-decoration: none;
+}
 .dark-out .mobile-sidebar-wrapper a:first-of-type {
   margin-top: 10px;
 }
