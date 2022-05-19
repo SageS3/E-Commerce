@@ -1,8 +1,10 @@
 @import '../../styles/Variables.scss';
 
 .dark-out {
-  width: 100%;
-  height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0);
   top: 50%;
   left: 50%;
@@ -11,6 +13,7 @@
   animation: fade-in 400ms ease-in forwards;
   position: absolute;
   overflow: hidden;
+  overscroll-behavior: none;
 
   .item-count {
     width: 10px;
@@ -35,7 +38,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 3;
-    margin-top: 52px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     width: 50%;
