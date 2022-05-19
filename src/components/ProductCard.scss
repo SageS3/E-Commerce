@@ -25,7 +25,8 @@
     cursor: pointer;
     border: none;
     color: white;
-    font-weight: bolder;
+    font-family: $poppins;
+    font-weight: 400;
     font-size: 1.2rem;
     transition: transform 200ms ease-in-out;
     margin-bottom: 10px;
@@ -41,6 +42,8 @@
     margin-top: 5px;
     margin-bottom: 0;
     word-wrap: break-word;
+    font-family: $poppins;
+    font-weight: 400;
   }
 
   .main-product-img {
@@ -55,6 +58,8 @@
     margin-top: 10px;
     font-size: 1.3rem;
     margin: 5px;
+    font-family: $poppins;
+    font-weight: 300;
   }
 }
 

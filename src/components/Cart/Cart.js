@@ -40,8 +40,9 @@ function Cart() {
     return (
       <div className="confirm-checkout-wrapper">
         <section>
-          <div className="total-price">Subtotal:</div>
-          <div className="price">{cart.subtotal.formatted_with_symbol}</div>
+          <h2 className="total-price">
+            {`Subtotal: ${cart.subtotal.formatted_with_symbol} `}
+          </h2>
         </section>
         <Link to="/checkout">
           <button className="checkout-button">Checkout</button>

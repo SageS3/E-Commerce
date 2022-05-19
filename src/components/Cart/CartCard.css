@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
 .cart-list-container {
   display: flex;
   align-items: center;
@@ -61,10 +62,12 @@
 .cart-list-container .item-card .item-details-wrapper section:first-of-type h3 {
   padding: 5px;
   font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
   text-align: center;
 }
 .cart-list-container .item-card .item-details-wrapper section:first-of-type p {
-  font-weight: bold;
+  font-weight: 200;
+  font-family: "Poppins", sans-serif;
   color: rgb(64, 63, 76);
   text-align: center;
 }
@@ -81,12 +84,14 @@
   margin: 4px 0 4px 0;
 }
 .cart-list-container .item-card section:last-of-type .quantity-adjustment .quantity {
-  font-weight: bolder;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
   font-size: 1.1rem;
 }
 .cart-list-container .item-card section:last-of-type .quantity-adjustment .price {
-  font-weight: bolder;
+  font-weight: 400;
   font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
 }
 .cart-list-container .item-card section:last-of-type .quantity-adjustment button:first-of-type {
   display: flex;

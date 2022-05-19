@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
 .checkout-page {
   height: 100vh;
   display: flex;
@@ -26,6 +27,7 @@
 }
 .checkout-page .steps p {
   margin: 0px 20px 0px 20px;
+  font-family: "Poppins", sans-serif;
 }
 .checkout-page .stepper {
   margin: 0px 0 40px 0;
@@ -82,6 +84,8 @@
   padding: 0;
 }
 .checkout-page .back-button-container .back-button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
   font-size: 1.3rem;
   color: white;
   background-color: rgba(0, 0, 0, 0);

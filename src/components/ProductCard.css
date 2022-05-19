@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
 .card {
   color: black;
   background-color: white;
@@ -23,7 +24,8 @@
   cursor: pointer;
   border: none;
   color: white;
-  font-weight: bolder;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
   font-size: 1.2rem;
   transition: transform 200ms ease-in-out;
   margin-bottom: 10px;
@@ -37,6 +39,8 @@
   margin-top: 5px;
   margin-bottom: 0;
   word-wrap: break-word;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
 }
 .card .main-product-img {
   min-width: 10rem;
@@ -51,4 +55,6 @@
   margin-top: 10px;
   font-size: 1.3rem;
   margin: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }/*# sourceMappingURL=ProductCard.css.map */

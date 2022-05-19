@@ -34,8 +34,9 @@
       color: $primary-color;
       transition: box-shadow 300ms ease-in-out;
       box-sizing: border-box;
-      font-weight: 300;
+      font-weight: 400;
       border: none;
+      font-family: $poppins;
     }
 
     a:last-of-type button {
@@ -57,6 +58,8 @@
         font-size: 1rem;
         right: 6px;
         top: -6px;
+        font-family: $poppins;
+        font-weight: 400;
       }
     }
   }

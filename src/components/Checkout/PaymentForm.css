@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
 .paymentFormWrapper {
   display: flex;
   flex-direction: column;
@@ -33,6 +34,7 @@
   color: rgb(64, 63, 76);
   font-weight: 600;
   transition: color 500ms;
+  font-family: "Poppins", sans-serif;
 }
 .paymentFormWrapper button:hover {
   color: white;

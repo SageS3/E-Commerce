@@ -65,11 +65,13 @@
         h3 {
           padding: 5px;
           font-size: 1.2rem;
+          font-family: $poppins;
           text-align: center;
         }
 
         p {
-          font-weight: bold;
+          font-weight: 200;
+          font-family: $poppins;
           color: $primary-color;
           text-align: center;
         }
@@ -89,13 +91,15 @@
         margin: 4px 0 4px 0;
 
         .quantity {
-          font-weight: bolder;
+          font-weight: 300;
+          font-family: $poppins;
           font-size: 1.1rem;
         }
 
         .price {
-          font-weight: bolder;
+          font-weight: 400;
           font-size: 1.2rem;
+          font-family: $poppins;
         }
 
         button:first-of-type {

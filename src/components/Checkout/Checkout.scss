@@ -28,6 +28,7 @@
     margin-top: 40px;
     p {
       margin: 0px 20px 0px 20px;
+      font-family: $poppins;
     }
   }
 
@@ -89,6 +90,8 @@
     justify-content: flex-start;
     padding: 0;
     .back-button {
+      font-family: $poppins;
+      font-weight: 200;
       font-size: 1.3rem;
       color: white;
       background-color: rgba(0, 0, 0, 0);
