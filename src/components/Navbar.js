@@ -37,7 +37,7 @@ function Navbar() {
         <Link to="/cart">
           <button type="button">
             <ShoppingCartIcon />
-            {cart.total_items > 0 && itemCountBadge()}
+            {cart.total_items > 0 && cartPage && itemCountBadge()}
           </button>
         </Link>
       </nav>

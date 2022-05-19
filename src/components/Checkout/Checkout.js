@@ -12,6 +12,8 @@ function Checkout({ cart, onCaptureCheckout, order }) {
   const navigate = useNavigate();
   const selectedStep = () => <div className="selected-step"></div>;
 
+  const stepperSteps = ['Shipping Details', 'Payment Details', 'Confirmation'];
+
   const loadingAnimation = () => (
     <div className="loading-animation">
       <div className="loading_dot dot_one"></div>
@@ -91,9 +93,7 @@ function Checkout({ cart, onCaptureCheckout, order }) {
     <div className="checkout-page">
       {activeStep < 2 && backButton()}
       <section className="steps">
-        <p>Shipping</p>
-        <p>Payment</p>
-        <p>Confirmation</p>
+        <p>{stepperSteps[activeStep]}</p>
       </section>
       <div className="stepper">
         {activeStep === 0 ? (

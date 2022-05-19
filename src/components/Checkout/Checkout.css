@@ -101,15 +101,17 @@
 }
 .checkout-page .confirmation-wrapper p {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 300;
   color: rgb(64, 63, 76);
+  font-family: "Poppins", sans-serif;
 }
 .checkout-page .confirmation-wrapper button {
   color: white;
   background-color: rgb(119, 200, 170);
   border: none;
   padding: 8px;
+  font-family: "Poppins", sans-serif;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 300;
   cursor: pointer;
 }/*# sourceMappingURL=Checkout.css.map */
