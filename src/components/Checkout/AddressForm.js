@@ -46,7 +46,6 @@ export default function AddressForm({ nextStep, setShippingData }) {
         onSubmit={(event) => submitAddressDetails(event)}
         className="addressForm"
       >
-        <h2>Shipping Details</h2>
         <input
           name={firstName}
           required
