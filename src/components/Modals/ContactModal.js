@@ -8,7 +8,7 @@ import './ContactModal.css';
 function ContactModal({ setOpen }) {
   return ReactDOM.createPortal(
     <>
-      <div className="contact-wrapper">
+      <form className="contact-wrapper" onSubmit={() => setOpen(false)}>
         <div className="contact-form">
           <button
             type="button"
@@ -21,16 +21,12 @@ function ContactModal({ setOpen }) {
           <input placeholder="Name" required></input>
           <input placeholder="Email" required></input>
           <textarea
+            required
             placeholder="Message"
             rows="10"
             cols="30"
-            required
           ></textarea>
-          <button
-            type="submit"
-            className="submit-button"
-            onClick={() => setOpen(false)}
-          >
+          <button type="submit" className="submit-button">
             Submit
           </button>
           <section>
@@ -39,7 +35,7 @@ function ContactModal({ setOpen }) {
             <TwitterIcon />
           </section>
         </div>
-      </div>
+      </form>
     </>,
     document.getElementById('modal-portal')
   );

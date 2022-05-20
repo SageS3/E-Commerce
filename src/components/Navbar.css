@@ -62,10 +62,10 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
-.navbar .navbarWrapper > button:hover {
+.navbar .navbar-wrapper button:hover {
   box-shadow: 9px 9px 8px rgba(108, 122, 137, 0.6);
 }
-.navbar .navbarWrapper > a:last-of-type button:hover {
+.navbar .navbar-wrapper > a:last-of-type button:hover {
   transform: scale(1.1);
   box-shadow: 9px 9px 8px rgba(108, 122, 137, 0.6);
 }
