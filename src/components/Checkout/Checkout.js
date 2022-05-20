@@ -80,7 +80,14 @@ function Checkout({ cart, onCaptureCheckout, order }) {
     return (
       <div className="back-button-container">
         <Link to="/cart">
-          <ArrowBackIosIcon sx={{ color: 'rgb(119,200,170)' }} />
+          <ArrowBackIosIcon
+            sx={{
+              color: 'rgb(119,200,170)',
+              position: 'relative',
+              top: '5px',
+              left: '6px',
+            }}
+          />
           <button className="back-button" onClick={() => backStep()}>
             Back
           </button>

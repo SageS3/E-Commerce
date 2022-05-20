@@ -5,6 +5,7 @@ import './ProductCard.css';
 function ProductCard() {
   const productCardProps = useContext(PropContext);
   const { products, handleAddToCart } = productCardProps;
+
   return (
     <>
       {products.map((product) => (
