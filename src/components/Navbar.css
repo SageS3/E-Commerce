@@ -81,6 +81,7 @@
     height: 50px;
     display: flex;
     justify-content: flex-start;
+    z-index: 2;
   }
   .navbar .navbar-wrapper > button,
 .navbar a {

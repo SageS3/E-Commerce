@@ -1,17 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
 .dark-out {
+  position: fixed;
   padding: 0;
   margin: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 0;
+  z-index: 1;
   -webkit-animation: fade-in 400ms ease-in forwards;
           animation: fade-in 400ms ease-in forwards;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   -ms-scroll-chaining: none;
       overscroll-behavior: none;
@@ -39,11 +40,12 @@
 }
 .dark-out .mobile-sidebar-wrapper {
   position: relative;
+  padding-top: 90px;
   left: -30%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 3;
-  margin-top: 50px;
+  z-index: 1;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   width: 50%;
