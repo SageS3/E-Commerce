@@ -28,6 +28,24 @@
 .checkout-page .steps p {
   margin: 0px 20px 0px 20px;
   font-family: "Poppins", sans-serif;
+  -webkit-animation: text_appear 1s ease-in-out forwards;
+          animation: text_appear 1s ease-in-out forwards;
+}
+@-webkit-keyframes text_appear {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: white;
+  }
+}
+@keyframes text_appear {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: white;
+  }
 }
 .checkout-page .stepper {
   margin: 0px 0 40px 0;

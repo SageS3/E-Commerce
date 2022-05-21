@@ -29,6 +29,17 @@
     p {
       margin: 0px 20px 0px 20px;
       font-family: $poppins;
+      animation: text_appear 1s ease-in-out forwards;
+    }
+
+    @keyframes text_appear {
+      0% {
+        color: transparent;
+      }
+
+      100% {
+        color: white;
+      }
     }
   }
 

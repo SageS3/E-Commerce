@@ -36,10 +36,9 @@
     width: 50%;
     font-size: 1.9rem;
     font-weight: 400;
-    animation: glide_up 900ms cubic-bezier(0.82, -0.32, 0.24, 1.86) forwards,
-      text_appear 1s ease-in-out forwards;
+    animation: heading_text_appear 1s ease-in-out forwards;
 
-    @keyframes text_appear {
+    @keyframes heading_text_appear {
       0% {
         color: rgba(119, 200, 170, 0);
       }
