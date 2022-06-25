@@ -58,9 +58,6 @@ function Cart() {
     return (
       <div className="empty-cart-message">
         <h1>Add Items To Your Cart!</h1>
-        <Link to="/">
-          <button className="home-redirect-button">Checkout</button>
-        </Link>
       </div>
     );
   };

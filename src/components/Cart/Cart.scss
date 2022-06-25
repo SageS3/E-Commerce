@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-
+  text-align: center;
   .empty-cart-message {
     border: 2px solid white;
     border-radius: 12px;
@@ -21,6 +21,7 @@
     max-width: 70%;
     min-width: 10rem;
     width: 50%;
+    word-wrap: normal;
     h1 {
       margin: none;
       flex-wrap: wrap;
@@ -30,9 +31,11 @@
     .home-redirect-button {
       outline: none;
       color: $primary-color;
-      background-color: white;
+      background-color: $secondary-color;
       width: 100%;
       height: 30px;
+      border: none;
+      cursor: pointer;
     }
   }
 
