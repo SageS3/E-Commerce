@@ -7,9 +7,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import Navbar from '../components/Navbar';
 
 function Main({ cart }) {
-  const isEmpty = !cart.line_items;
-
-  if (isEmpty) {
+  const loadingAnimation = () => {
     return (
       <div className="loading-animation">
         <div className="loading_dot dot_one"></div>
@@ -17,7 +15,11 @@ function Main({ cart }) {
         <div className="loading_dot dot_three"></div>
       </div>
     );
-  }
+  };
+
+  const isEmpty = !cart.line_items;
+
+  if (isEmpty) return loadingAnimation();
 
   return (
     <div className="home-page">
