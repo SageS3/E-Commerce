@@ -3,14 +3,37 @@ import './MobileSidebar.css';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { animated, useSpring } from '@react-spring/web';
 
-function MobileSidebar({ totalItems, setIsOpen, setIsSidebarOpen }) {
+function MobileSidebar({
+  totalItems,
+  setIsOpen,
+  setIsSidebarOpen,
+  isSidebarOpen,
+}) {
+  const slideSidebar = useSpring({
+    config: { duration: 300 },
+    from: {
+      left: '-30%',
+    },
+    to: {
+      left: '25%',
+    },
+  });
+
+  const animatedDarkOut = useSpring({
+    delay: 2000,
+    backgroundColor: isSidebarOpen
+      ? 'rgba(0, 0, 0, 0.4)'
+      : 'rgba(0, 0, 0, 0.0)',
+  });
+
   const itemCountBadge = () => {
     return <div className="item-count">{totalItems}</div>;
   };
   return ReactDOM.createPortal(
-    <div className="dark-out">
-      <div className="mobile-sidebar-wrapper">
+    <animated.div className="dark-out" style={animatedDarkOut}>
+      <animated.div className="mobile-sidebar-wrapper" style={slideSidebar}>
         <Link to="/">
           <button type="button" onClick={() => setIsSidebarOpen(false)}>
             Home
@@ -26,8 +49,8 @@ function MobileSidebar({ totalItems, setIsOpen, setIsSidebarOpen }) {
             {totalItems > 0 && itemCountBadge()}
           </button>
         </Link>
-      </div>
-    </div>,
+      </animated.div>
+    </animated.div>,
     document.getElementById('sidebar-portal')
   );
 }

@@ -4,12 +4,24 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import './ContactModal.css';
+import { animated, useSpring } from '@react-spring/web';
 
 function ContactModal({ setOpen }) {
+  const animateContactFormUp = useSpring({
+    config: { duration: 400 },
+    delay: 100,
+    from: {
+      transform: 'translate(-50%, 100%)',
+    },
+    to: {
+      transform: 'translate(-50%, -50%)',
+    },
+  });
+
   return ReactDOM.createPortal(
     <>
       <form className="contact-wrapper" onSubmit={() => setOpen(false)}>
-        <div className="contact-form">
+        <animated.div style={animateContactFormUp} className="contact-form">
           <button
             type="button"
             className="close-button"
@@ -34,10 +46,10 @@ function ContactModal({ setOpen }) {
             <FacebookIcon />
             <TwitterIcon />
           </section>
-        </div>
+        </animated.div>
       </form>
     </>,
-    document.getElementById('modal-portal')
+    document.getElementById('contact-portal')
   );
 }
 

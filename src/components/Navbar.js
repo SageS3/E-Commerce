@@ -19,7 +19,7 @@ function Navbar() {
       <button
         type="button"
         className="hamburger-nav-button"
-        onClick={() => toggleSidebar(!isSidebarOpen)} // toggleSidebar(!isSidebarOpen)
+        onClick={() => toggleSidebar(!isSidebarOpen)}
       >
         <span></span>
         <span></span>

@@ -106,13 +106,17 @@ function App() {
           </Routes>
 
           {isContactModalOpen && (
-            <ContactModal setOpen={setIsContactModalOpen} />
+            <ContactModal
+              setOpen={setIsContactModalOpen}
+              isOpen={isContactModalOpen}
+            />
           )}
           {isSidebarOpen && (
             <MobileSidebar
               totalItems={cart.total_items}
               setIsOpen={setIsContactModalOpen}
               setIsSidebarOpen={setIsSidebarOpen}
+              isSidebarOpen={isSidebarOpen}
             />
           )}
         </Router>
