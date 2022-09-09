@@ -19,6 +19,7 @@ function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
@@ -30,8 +31,10 @@ function App() {
   };
 
   const handleAddToCart = async (productId, quantity) => {
+    setIsLoading(true);
     const { cart } = await commerce.cart.add(productId, quantity);
     setCart(cart);
+    setIsLoading(false);
   };
 
   const handleUpdateCart = async (productId, quantity) => {
@@ -79,6 +82,8 @@ function App() {
           cart: cart,
           products: products,
           isSidebarOpen: isSidebarOpen,
+          isLoading: isLoading,
+          setIsLoading: setIsLoading,
           emptyCart: handleEmptyCart,
           updateCart: handleUpdateCart,
           toggleSidebar: setIsSidebarOpen,
@@ -89,7 +94,11 @@ function App() {
       >
         <Router>
           <Routes>
-            <Route exact path="/" element={<Main cart={cart} />} />
+            <Route
+              exact
+              path="/"
+              element={<Main cart={cart} products={products} />}
+            />
             <Route exact path="/cart" element={<Cart />} />
             <Route
               exact

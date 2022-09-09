@@ -1,4 +1,3 @@
-import React from 'react';
 import './Main.css';
 import { ProductCard } from './index.js';
 import InstagramIcon from '@mui/icons-material/Instagram';

@@ -9,7 +9,7 @@
   justify-content: center;
   width: 100%;
   z-index: 1;
-  background-color: rgba(230, 230, 240, 0.5);
+  height: 60px;
 }
 .navbar > .item-count {
   display: none;
