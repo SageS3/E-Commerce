@@ -1,15 +1,15 @@
-import React from 'react';
-import './PaymentForm.css';
-import { loadStripe } from '@stripe/stripe-js';
+import React from 'react'
+import './PaymentForm.css'
+import { loadStripe } from '@stripe/stripe-js'
 import {
   Elements,
   CardElement,
   ElementsConsumer,
-} from '@stripe/react-stripe-js';
+} from '@stripe/react-stripe-js'
 
 const stripePromise = loadStripe(
   `${process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}`
-);
+)
 
 function PaymentForm({
   checkoutToken,
@@ -18,16 +18,16 @@ function PaymentForm({
   nextStep,
 }) {
   const handleSubmit = async (event, elements, stripe) => {
-    event.preventDefault();
-    if (!stripe || !elements) return;
-    const cardElement = elements.getElement(CardElement);
+    event.preventDefault()
+    if (!stripe || !elements) return
+    const cardElement = elements.getElement(CardElement)
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: cardElement,
-    });
+    })
 
     if (error) {
-      console.log(error.message);
+      console.log(error.message)
     } else {
       const orderData = {
         line_items: checkoutToken.live.line_items,
@@ -51,11 +51,11 @@ function PaymentForm({
             payment_method_id: paymentMethod.id,
           },
         },
-      };
-      onCaptureCheckout(checkoutToken.id, orderData);
-      nextStep();
+      }
+      onCaptureCheckout(checkoutToken.id, orderData)
+      nextStep()
     }
-  };
+  }
 
   const cardElementOptions = {
     style: {
@@ -72,7 +72,7 @@ function PaymentForm({
     },
 
     hidePostalCode: true,
-  };
+  }
 
   return (
     <div className="paymentFormWrapper">
@@ -89,7 +89,7 @@ function PaymentForm({
         </ElementsConsumer>
       </Elements>
     </div>
-  );
+  )
 }
 
-export default PaymentForm;
+export default PaymentForm
